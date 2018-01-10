@@ -1,10 +1,14 @@
 //Global Variables
 var running;
-var intervalTime;
 var questionNumber;
-var game = "";
 var timer;
-//Question Data (Constant)
+var wins;
+var losses;
+$("#bodyText").hide();
+$("#time").hide();
+$("#gifURL").hide();
+$("#results").hide();
+//Question Data
 var questionBank = [
 	{
 		question: "Hello Facebook. Yes, this is actually Lindsay. Welcome to my Facebook page!",
@@ -187,23 +191,28 @@ var questionBank = [
 		imageURL: "./images/alec-baldwin.gif"
 	}
 ];
-
+//Trivia Game Object
 var triviaGame = {
+	game: "",
+	intervalTime: 0,
 	questionBank: [],
-	displayMessage: function(){
-	},
 	endGame: function(){
 		running = false;
 		this.stop();
 		$("#timeRemaining").text(15);
 		$(".multipleChoice").removeAttr("value");
 		$(".multipleChoice").empty();
-		$("#time").hide();
+		$(".multipleChoice").hide();
+		$("#bodyText header").hide();
 		$("#bodyText").hide();
+		$("#question").hide();
+		$("#wins").text(wins);
+		$("#losses").text(losses);
+		$("#results").show();
 		$("#start").show();
 	},
 	stop: function(){
-		clearInterval(intervalTime);
+		clearInterval(this.intervalTime);
 	},
 	setQuestion: function(){
 			//Randomize Quetion
@@ -220,62 +229,63 @@ var triviaGame = {
 				this.questionBank[questionNumber].answers.splice([selectionNumber],1);
 			}
 	},
+	showGIF: function() {
+		if(this.game === "win"){
+			$("#game").text("Correct!");
+		}
+		else if(this.game === "lose"){
+			$("#game").text("Nope! The correct answer was: " + this.questionBank[questionNumber].correctAnswer);
+		}
+		else if(this.game === "time"){
+			$("#game").text("Time's up! The correct answer was: " + this.questionBank[questionNumber].correctAnswer);
+		}
+		$("#gif").show();
+		$("#gifURL").attr("src",this.questionBank[questionNumber].imageURL);
+		$("#bodyText").hide();
+		setTimeout(function(){
+			$("#gifURL").removeAttr("src");
+			$("#gif").hide();
+			$("#bodyText").show()
+		}, 5000);
+	},
 	run: function(timer){
 		//console.log(this.questionBank);
 		if(this.questionBank.length > 0){
 			this.setQuestion();
-			intervalTime = setInterval(function(){
-				if (running){
-					timer--;
-					$("#timeRemaining").text(timer);
-					$("#time").val(timer);
-					if (timer === 0) {
-						// game = "lose";
-						triviaGame.selectedAnswer();
-						//triviaGame.displayMessage();
-						triviaGame.stop();
-						//triviaGame.run(4);
-						}
+			this.intervalTime = setInterval(function(){
+			if (running){
+				timer--;
+				$("#timeRemaining").text(timer);
+				$("#time").val(timer);
+				if (timer === 0) {
+					triviaGame.game = "time";
+					losses++;
+					triviaGame.stop();
+					triviaGame.showGIF();
+					triviaGame.questionBank.splice([questionNumber],1);
+					triviaGame.run(20);
 					}
-				},1000)
+				}
+			},1000)
 		}
 		else{
 			this.endGame();
 		}
 	},
-	selectedAnswer: function(){
-		var selectedAnswer = $("#" + this.id).val();
-		if ($("#time").val() <= 0){
-			game = "lose";
-			this.displayMessage();
-			this.reset();
+	selectedAnswer: function(obj){
+		var buttonSelected = $("#" + obj.id).val();
+		if (buttonSelected == this.questionBank[questionNumber].correctAnswer){
+			this.game = "win";
+			wins++;
 		}
 		else{
-			if (selectedAnswer == this.questionBank[questionNumber].correctAnswer){
-				game = "win";
-				this.displayMessage();
-			}
-			else{
-				game = "lose";
-				this.displayMessage();
-			}
+			this.game = "lose";
+			losses++;
 		}
 		this.stop();
 		this.showGIF();
 		this.questionBank.splice([questionNumber],1);
-		//this.stop();
-		this.run(4);
-	},
-	showGIF: function() {
-		$("#gifURL").show();
-		console.log(this.questionBank[questionNumber].imageURL);
-		$("#gifURL").attr("src",this.questionBank[questionNumber].imageURL);
-		$("#bodyText").hide();
-		setTimeout(function(){
-			$("#gifURL").removeAttr("src");
-			$("#gifURL").hide();
-			$("#bodyText").show()
-		}, 1000);
+		this.run(20);
 	},
 	reset: function() {
 		running = true;
@@ -283,12 +293,6 @@ var triviaGame = {
 		$("#bodyText").show();
 		$("#time").show();
 		$("#start").hide();
-		this.run(4);
+		this.run(16);
 	}
 }
-
-$("#bodyText").hide();
-$("#time").hide();
-$("#gifURL").hide();
-//console.log(questionBank.length);
-console.log(triviaGame.run(intervalTime));

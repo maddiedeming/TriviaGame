@@ -19,7 +19,10 @@
                         <br/>
                         <button id="start" class="btn mx-auto bg-primary text-light mt-5" onclick="triviaGame.reset()">Start</button>
                     </div>
-                    <img style="width: auto; height: auto;" class="mx-auto d-block mt-5" id="gifURL">
+                    <div id="gif" class="mx-auto text-center">
+                        <h2 id="game" class="pt-5"></h2>
+                        <img style="width: auto; height: auto;" class="mx-auto d-block rounded" id="gifURL">
+                    </div>
                     <div id="bodyText" class="mx-auto mt-2"><br />
                         <blockquote class="twitter-tweet mx-auto">
                             <header class="text-right" >
@@ -31,11 +34,16 @@
                             <p id="question">This is the question.</p>
                         </blockquote>
                         <div class="text-center">
-                            <button id="selection1" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer()">Test 1</button>
-                            <button id="selection2" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer()">Test 2</button>
-                            <button id="selection3" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer()">Test 3</button>
-                            <button id="selection4" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer()">Test 4</button>
+                            <button id="selection1" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer(this)">Test 1</button>
+                            <button id="selection2" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer(this)">Test 2</button>
+                            <button id="selection3" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer(this)">Test 3</button>
+                            <button id="selection4" class="btn multipleChoice bg-dark text-light" onclick="triviaGame.selectedAnswer(this)">Test 4</button>
                         </div>
+                    </div>
+                    <div id="results" class="mx-auto text-center">
+                        <h1>How'd You Do?</h1>
+                        <h2 id="wins">Wins: </h2>
+                        <h2 id="losses">Losses: </h2>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
