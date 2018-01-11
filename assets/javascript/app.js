@@ -122,7 +122,7 @@ var questionBank = [
 	{
 		question: "kowabunga dudettes. i'm so pumped to be on this surfing kick. who else surfs out there? gnarly day in the h2o. ridin waves!",
 		answers: ["Kim Kardashian","Rihanna","Emma Stone","Lindsay Lohan"],
-		correctAnswer: "Kim Kardashian West",
+		correctAnswer: "Kim Kardashian",
 		imageURL: "assets/images/kim-kardashian-1.gif",
 		src: "https://twitter.com/KimKardashian/status/22396212024"
 	},
@@ -200,8 +200,6 @@ var triviaGame = {
 		this.stop();
 		$("#timeRemaining").text(15);
 		$(".multipleChoice").removeAttr("value");
-		// $(".multipleChoice").hide();
-		// $("#content header").hide();
 		$("#content").hide();
 		$("blockquote").hide();
 		$("#question").hide();
@@ -229,6 +227,10 @@ var triviaGame = {
 		}
 	},
 	showGIF: function() {
+		$(".multipleChoice").prop("disabled",false);
+		$(".buttons button").addClass("multipleChoice");
+		$(".multipleChoice").removeClass("btn-danger");
+		$(".multipleChoice").removeClass("btn-success");
 		$("#gameMessage").empty();
 		$("#gameMessage2").empty();
 		$("#gameMessage").removeClass("");
@@ -237,11 +239,11 @@ var triviaGame = {
 		}
 		else if(this.game === "lose"){
 			$("#gameMessage").html("<h4>Nope!</h4>");
-			$("#gameMessage2").html("<h6>The correct answer was: <br />" + this.questionBank[questionNumber].correctAnswer + "<h6>");
+			$("#gameMessage2").html("<h6>The correct answer was: <br /><strong>" + this.questionBank[questionNumber].correctAnswer + "</strong><h6>");
 		}
 		else if(this.game === "time"){
 			$("#gameMessage").html("<h4>Time's up!</h4>");
-			$("#gameMessage2").html("<h6>The correct answer was: <br />" + this.questionBank[questionNumber].correctAnswer + "<h6>");
+			$("#gameMessage2").html("<h6>The correct answer was: <br /><strong>" + this.questionBank[questionNumber].correctAnswer + "</strong><h6>");
 		}
 		if(volumeOn === true){
 			$("#tweetSound").get(0).play(); 
@@ -268,18 +270,22 @@ var triviaGame = {
 				$("#timeRemaining").text(timer);
 				$("#time").val(timer);
 				if (timer === 0) {
-					// $("#timeRemaining").removeClass("badge-light");
-					// $("#timeRemaining").addClass("badge-danger");
+					$("#time").removeClass("btn-primary");
+					$("#time").addClass("btn-danger");
+					$(".multipleChoice").prop("disabled",true);
+					triviaGame.stop();			
 					triviaGame.game = "time";
 					losses++;
-					triviaGame.stop();
-					triviaGame.showGIF();
-					triviaGame.questionBank.splice([questionNumber],1);
-					triviaGame.run(20);
+					setTimeout(function(){
+						triviaGame.showGIF();
+						triviaGame.questionBank.splice([questionNumber],1);
+						triviaGame.run(20);						
+					}, 3000);
+
 					}
 				else{
-					// $("#timeRemaining").addClass("badge-light");
-					// $("#timeRemaining").removeClass("badge-danger");
+					$("#time").addClass("btn-primary");
+					$("#time").removeClass("btn-danger");
 				}
 			}
 			},1000)
@@ -289,30 +295,33 @@ var triviaGame = {
 		}
 	},
 	selectedAnswer: function(obj){
-		var buttonSelected = $("#" + obj.id).val();
-		if (buttonSelected == this.questionBank[questionNumber].correctAnswer){
+		var buttonSelected = $("#" + obj.id)
+		if (buttonSelected.val() == this.questionBank[questionNumber].correctAnswer){
+			triviaGame.stop();
+			buttonSelected.removeClass("multipleChoice");
+			buttonSelected.addClass("btn-success");
 			this.game = "win";
 			wins++;
 		}
 		else{
+			triviaGame.stop();
+			buttonSelected.removeClass("multipleChoice");
+			buttonSelected.addClass("btn-danger");
 			this.game = "lose";
 			losses++;
-		}
-		if(this.questionBank.length > 1){
-			this.stop();
-			this.showGIF();
-			this.questionBank.splice([questionNumber],1);
-			this.run(20);
-		}
-		else{
-			this.stop();
-			this.showGIF();
-			this.questionBank.splice([questionNumber],1);
-			setTimeout(function(){
-				triviaGame.endGame();
-			}, 5000);
-		}
-
+		}			
+		setTimeout(function(){
+			triviaGame.showGIF();
+			triviaGame.questionBank.splice([questionNumber],1);	
+			if(triviaGame.questionBank.length > 1){
+				triviaGame.run(20);
+			}
+			else{
+				setTimeout(function(){
+					triviaGame.endGame();
+				}, 5000);
+			}
+		}, 3000);
 	},
 	volumeOff: function(){
 		$("#volumeOn").show();

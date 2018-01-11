@@ -50,3 +50,11 @@ blockquote.twitter-tweet a:visited {
     -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count:infinite;
 }
+.multipleChoice {
+    color:#0275d8;
+    background-color:#b8e6ed;
+}
+.multipleChoice:hover {
+    color:#ffffff;
+    background-color:#0275d8;
+}

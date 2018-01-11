@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Twitter Trivia</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico"/>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -35,11 +36,11 @@
                             </header><br />
                             <p id="question">This is the question.</p>
                         </blockquote>
-                        <div class="text-center">
-                            <button id="selection1" type="button" class="btn btn-sm multipleChoice bg-dark text-light d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
-                            <button id="selection2" type="button" class="btn btn-sm multipleChoice bg-dark text-light d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
-                            <button id="selection3" type="button" class="btn btn-sm multipleChoice bg-dark text-light d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
-                            <button id="selection4" type="button" class="btn btn-sm multipleChoice bg-dark text-light d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
+                        <div class="text-center buttons">
+                            <button id="selection1" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
+                            <button id="selection2" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
+                            <button id="selection3" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
+                            <button id="selection4" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                         </div>
                     </div>
                     <div id="results" class="mx-auto text-center">
