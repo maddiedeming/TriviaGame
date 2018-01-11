@@ -6,7 +6,7 @@
     <title>Twitter Trivia</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body class="bg-info text-light">
         <div class="container-fluid">
@@ -21,7 +21,7 @@
                     </div>
                     <div id="gif" class="mx-auto text-center">
                         <h2 id="game" class="pt-5"></h2>
-                        <img style="width: auto; height: auto;" class="mx-auto d-block rounded" id="gifURL">
+                        <img style="width:auto;height:auto;max-height:300px;" class="mx-auto d-block rounded img-responsive" id="gifURL">
                     </div>
                     <div id="bodyText" class="mx-auto mt-2"><br />
                         <blockquote class="twitter-tweet mx-auto">
@@ -45,6 +45,9 @@
                         <h2 id="wins"></h2>
                         <h2 id="losses"></h2>
                     </div>
+                    <audio id="tweetSound">
+                        <source src="assets/audio/tweet.mp3" type="audio/mpeg">
+                    </audio>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
             </div>
@@ -53,6 +56,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>   
-    <script src="javascript/app.js" type="text/javascript"></script>
+    <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>
