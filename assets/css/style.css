@@ -8,7 +8,6 @@ blockquote.twitter-tweet {
     max-width: 100%;
     min-width: 220px;
     padding: 1.25rem 1.25rem 0.725rem 1.25rem;
-    
 }
 blockquote.twitter-tweet:before {
     content: none;
@@ -23,4 +22,31 @@ blockquote.twitter-tweet a {
 }
 blockquote.twitter-tweet a:visited {
     color: #2b7bb9;
+}
+#volumeOff, #volumeOn {
+    opacity: 0.5;
+}
+#volumeOff:hover, #volumeOn:hover {
+    opacity: 1;
+}
+@-webkit-keyframes blinker {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+.blink{
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes blinkerHover {
+    100% {opacity: 1;}
+  }
+.blink:hover{
+    text-decoration: blink;
+    -webkit-animation-name: blinkerHover;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:infinite;
 }

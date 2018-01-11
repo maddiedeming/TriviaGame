@@ -4,10 +4,14 @@ var questionNumber;
 var timer;
 var wins = 0;
 var losses = 0;
-$("#bodyText").hide();
+var volumeOn = true;
+$("#content").hide();
 $("#time").hide();
 $("#gifURL").hide();
 $("#results").hide();
+$("#volumeOn").hide();
+$("#gameMessage").hide();
+$("#gameMessage2").hide();
 //Question Data
 var questionBank = [
 	{
@@ -196,9 +200,9 @@ var triviaGame = {
 		this.stop();
 		$("#timeRemaining").text(15);
 		$(".multipleChoice").removeAttr("value");
-		$(".multipleChoice").hide();
-		$("#bodyText header").hide();
-		$("#bodyText").hide();
+		// $(".multipleChoice").hide();
+		// $("#content header").hide();
+		$("#content").hide();
 		$("blockquote").hide();
 		$("#question").hide();
 		$("#results").show();
@@ -210,38 +214,49 @@ var triviaGame = {
 		clearInterval(this.intervalTime);
 	},
 	setQuestion: function(){
-			//Randomize Quetion
-			questionNumber = Math.floor(Math.random() * this.questionBank.length);
-			$("#question").text(this.questionBank[questionNumber].question);
-			//Randomize Answers
-			var idNumber = 1;
-			for(i = 0; i < 4; i++){
-				selectionNumber = Math.floor(Math.random() * this.questionBank[questionNumber].answers.length);
-				var selectId = "#selection" + idNumber;
-				idNumber = idNumber + 1;
-				$(selectId).text(this.questionBank[questionNumber].answers[selectionNumber]);
-				$(selectId).val(this.questionBank[questionNumber].answers[selectionNumber]);
-				this.questionBank[questionNumber].answers.splice([selectionNumber],1);
-			}
+		//Randomize Quetion
+		questionNumber = Math.floor(Math.random() * this.questionBank.length);
+		$("#question").text(this.questionBank[questionNumber].question);
+		//Randomize Answers
+		var idNumber = 1;
+		for(i = 0; i < 4; i++){
+			selectionNumber = Math.floor(Math.random() * this.questionBank[questionNumber].answers.length);
+			var selectId = "#selection" + idNumber;
+			idNumber = idNumber + 1;
+			$(selectId).text(this.questionBank[questionNumber].answers[selectionNumber]);
+			$(selectId).val(this.questionBank[questionNumber].answers[selectionNumber]);
+			this.questionBank[questionNumber].answers.splice([selectionNumber],1);
+		}
 	},
 	showGIF: function() {
+		$("#gameMessage").empty();
+		$("#gameMessage2").empty();
+		$("#gameMessage").removeClass("");
 		if(this.game === "win"){
-			$("#game").text("Correct!");
+			$("#gameMessage").html("<h4>Correct!</h4>");
 		}
 		else if(this.game === "lose"){
-			$("#game").text("Nope! The correct answer was: " + this.questionBank[questionNumber].correctAnswer);
+			$("#gameMessage").html("<h4>Nope!</h4>");
+			$("#gameMessage2").html("<h6>The correct answer was: <br />" + this.questionBank[questionNumber].correctAnswer + "<h6>");
 		}
 		else if(this.game === "time"){
-			$("#game").text("Time's up! The correct answer was: " + this.questionBank[questionNumber].correctAnswer);
+			$("#gameMessage").html("<h4>Time's up!</h4>");
+			$("#gameMessage2").html("<h6>The correct answer was: <br />" + this.questionBank[questionNumber].correctAnswer + "<h6>");
 		}
-		$("#tweetSound").get(0).play(); 
+		if(volumeOn === true){
+			$("#tweetSound").get(0).play(); 
+		}
 		$("#gif").show();
+		$("#gameMessage").show();
+		$("#gameMessage2").show();
 		$("#gifURL").attr("src",this.questionBank[questionNumber].imageURL);
-		$("#bodyText").hide();
+		$("#content").hide();
 		setTimeout(function(){
 			$("#gifURL").removeAttr("src");
 			$("#gif").hide();
-			$("#bodyText").show()
+			$("#gameMessage").hide();
+			$("#gameMessage2").hide();
+			$("#content").show()
 		}, 5000);
 	},
 	run: function(timer){
@@ -299,16 +314,26 @@ var triviaGame = {
 		}
 
 	},
+	volumeOff: function(){
+		$("#volumeOn").show();
+		$("#volumeOff").hide();
+		volumeOn = false;
+	},
+	volumeOn: function(){
+		$("#volumeOff").show();
+		$("#volumeOn").hide();
+		volumeOn = true;
+	},
 	reset: function() {
 		running = true;
 		this.questionBank = JSON.parse(JSON.stringify(questionBank))
-		$("#bodyText").show();
+		$("#content").show();
 		$("#time").show();
 		$("#start").hide();
 		$("#results").hide();
 		$(".multipleChoice").show();
-		$("#bodyText header").show();
-		$("#bodyText").show();
+		$("#content header").show();
+		$("#content").show();
 		$("blockquote").show();
 		$("#question").show();
 		wins = 0;
