@@ -19,175 +19,252 @@ var questionBank = [
 		answers: ["Kourtney Kardashian","Paris Hilton","Tara Reid","Sarah Palin"],
 		correctAnswer: "Kourtney Kardashian",
 		imageURL: "assets/images/kourtney-kardashian.gif",
-		src: "https://twitter.com/kourtneykardash/status/11175751424"
+		src: "https://twitter.com/kourtneykardash/status/11175751424",
+		profileImg: "assets/images/kourtney-kardashian-profile.jpg",
+		twitterHandle: "@kourtneykardash",
+		audio: ""
 	},
 	{
 		question: "How Can Mirrors Be Real If Our Eyes Aren't Real",
 		answers: ["Jaden Smith","Jim Carrey","Jessica Simpson","Nicki Minaj"],
 		correctAnswer: "Jaden Smith",
 		imageURL: "assets/images/jaden-smith.gif",
-		src: "https://twitter.com/officialjaden/status/329768040235413504"
+		src: "https://twitter.com/officialjaden/status/329768040235413504",
+		profileImg: "assets/images/jaden-smith-profile.jpg",
+		twitterHandle: "@officialjaden",
+		audio: ""
 	},
 	{
 		question: "I was looking at tweets & saw that i really hurt someones feelings ! Im sorry. It was light blue background with white egg shape . Bye",
 		answers: ["Cher","Jamie Lee Curtis","Betty White","Jennifer Aniston"],
 		correctAnswer: "Cher",
 		imageURL: "assets/images/cher.gif",
-		src: "https://twitter.com/cher/status/194552615672102912"
+		src: "https://twitter.com/cher/status/194552615672102912",
+		profileImg: "assets/images/cher-profile.jpg",
+		twitterHandle: "@cher",
+		audio: "https://youtu.be/5Uu3kCEEc98?t=1m13s"
 	},
 	{
 		question: "WAS RUSHIN HOME TO TAKE A DUMP AND GOT CAUGHT BEHIND A SCHOOL BUS DROPPIN KIDS OFF!! LONGEST 30MINS OF MY LIFFFEEEE!!",
 		answers: ["Lil' Jon","50 Cent","Jay Z","Kanye West"],
 		correctAnswer: "Lil' Jon",
 		imageURL: "assets/images/lil-jon.gif",
-		src: "https://twitter.com/LilJon/status/25815827140"
+		src: "https://twitter.com/LilJon/status/25815827140",
+		profileImg: "assets/images/lil-jon-profile.jpg",
+		twitterHandle: "@LilJon",
+		audio: "https://youtu.be/GxBSyx85Kp8?t=3m33s"
 	},
 	{
 		question: "Dear elderly man at the gym:its hard 4 me 2 keep composure whilst punching at chipmunk speed when ur ball sack spills out of ur wind shorts",
 		answers: ["Jessica Simpson","Britney Spears","Tara Reid","Mariah Carey"],
 		correctAnswer: "Jessica Simpson",
 		imageURL: "assets/images/jessica-simpson.gif",
-		src: "https://twitter.com/JessicaSimpson/status/7727845556"
+		src: "https://twitter.com/JessicaSimpson/status/7727845556",
+		profileImg: "assets/images/jessica-simpson-profile.jpg",
+		twitterHandle: "@JessicaSimpson",
+		audio: "https://youtu.be/k2h72aXVP8o?t=7s"
 	},
 	{
 		question: "I can't believe my grand mothers making me take Out the garbage I'm rich fuck this I'm going home I don't need this shit",
 		answers: ["50 Cent","Kanye West","Justin Bieber","Gucci Mane"],
 		correctAnswer: "50 Cent",
 		imageURL: "assets/images/50-cent.gif",
-		src: "https://twitter.com/50cent/status/22201409032"
+		src: "https://twitter.com/50cent/status/22201409032",
+		profileImg: "assets/images/50-cent-profile.jpg",
+		twitterHandle: "@50cent",
+		audio: "https://youtu.be/5qm8PH4xAss?t=48s"
 	},
 	{
 		question: "i am still alive",
 		answers: ["John Cleese","Doris Day","Julie Andrews","Mel Brooks"],
 		correctAnswer: "John Cleese",
 		imageURL: "assets/images/john-cleese.gif",
-		src: "https://twitter.com/JohnCleese/status/465372192"
+		src: "https://twitter.com/JohnCleese/status/465372192",
+		profileImg: "assets/images/john-cleese-profile.jpeg",
+		twitterHandle: "@JohnCleese",
+		audio: "https://youtu.be/AAW6D21ICdg?t=1m19s"
 	},
 	{
 		question: "well i am going to bed because snoop noticed a tweet of mine where i only used one g in dogg and i'm mortified",
 		answers: ["Chrissy Teigen","Martha Stewart","David Beckham","Wiz Khalifa"],
 		correctAnswer: "Chrissy Teigen",
 		imageURL: "assets/images/chrissy-teigen.gif",
-		src: "https://twitter.com/chrissyteigen/status/530943469389635585"
+		src: "https://twitter.com/chrissyteigen/status/530943469389635585",
+		profileImg: "assets/images/chrissy-teigen-profile.jpg",
+		twitterHandle: "@chrissyteigen",
+		audio: ""
 	},
 	{
 		question: "I don't know about you, but I'm feeling 22.",
 		answers: ["Harry Styles","Taylor Swift","Katy Perry","John Mayer"],
 		correctAnswer: "Harry Styles",
 		imageURL: "assets/images/harry-styles.gif",
-		src: "https://twitter.com/Harry_Styles/status/694229236677120000"
+		src: "https://twitter.com/Harry_Styles/status/694229236677120000",
+		profileImg: "assets/images/harry-styles-profile.jpg",
+		twitterHandle: "@Harry_Styles",
+		audio: ""
 	},
 	{
 		question: "YO @BARACKOBAMA COME OVERRRRRR",
 		answers: ["Aubrey Plaza","Chelsea Handler","Amy Schumer","Amy Poehler"],
 		correctAnswer: "Aubrey Plaza",
 		imageURL: "assets/images/aubrey-plaza.gif",
-		src: "https://twitter.com/evilhag/status/11852331945"
+		src: "https://twitter.com/evilhag/status/11852331945",
+		profileImg: "assets/images/aubrey-plaza-profile.jpg",
+		twitterHandle: "@evilhag",
+		audio: ""
 	},
 	{
 		question: "Why is rhode island nor a road or an island",
 		answers: ["Justin Bieber","Jaden Smith","Seth Rogen","Jim Carrey"],
 		correctAnswer: "Justin Bieber",
 		imageURL: "assets/images/justin-bieber.gif",
-		src: "https://twitter.com/justinbieber/status/6350337695"
+		src: "https://twitter.com/justinbieber/status/6350337695",
+		profileImg: "assets/images/justin-bieber-profile.jpg",
+		twitterHandle: "@justinbieber",
+		audio: "https://youtu.be/gmMteI6qvTc?t=9s"
 	},
 	{
 		question: "Does anyone think global warming is a good thing? I love Lady Gaga. I think she's a really interesting artist.",
 		answers: ["Britney Spears","Jessica Simpson","Heidi Montag","Tila Tequila"],
 		correctAnswer: "Britney Spears",
 		imageURL: "assets/images/britney-spears.gif",
-		src: "https://twitter.com/britneyspears/status/35767743634481152"
+		src: "https://twitter.com/britneyspears/status/35767743634481152",
+		profileImg: "assets/images/britney-spears-profile.jpg",
+		twitterHandle: "@britneyspears",
+		audio: "https://www.youtube.com/watch?v=elueA2rofoo"
 	},
 	{
 		question: "Do you think I'm hip?",
 		answers: ["Martha Stewart","Betty White","Cher","Bette Midler"],
 		correctAnswer: "Martha Stewart",
 		imageURL: "assets/images/martha-stewart.gif",
-		src: "https://twitter.com/MarthaStewart/status/103943420409683968"
+		src: "https://twitter.com/MarthaStewart/status/103943420409683968",
+		profileImg: "assets/images/martha-stewart-profile.jpeg",
+		twitterHandle: "@MarthaStewart",
+		audio: ""
 	},
 	{
 		question: "pee pee on the street. PoPo come n get me if u can find meeee. I blame traffik.",
 		answers: ["Ke$ha","Jamie Kennedy","Riff Raff","Iggy Azalea"],
 		correctAnswer: "Ke$ha",
 		imageURL: "assets/images/kesha.gif",
-		src: "https://twitter.com/KeshaRose/status/195025413876092928"
+		src: "https://twitter.com/KeshaRose/status/195025413876092928",
+		profileImg: "assets/images/kesha-profile.jpg",
+		twitterHandle: "@KeshaRose",
+		audio: "https://youtu.be/iP6XpLQM2Cs?t=10s"
 	},
 	{
 		question: "Everyone knows I am right that Robert Pattinson should dump Kristen Stewart. In a couple of years, he will thank me. Be smart, Robert.",
 		answers: ["Donald Trump","Kanye West","Charlie Sheen","Perez Hilton"],
 		correctAnswer: "Donald Trump",
 		imageURL: "assets/images/donald-trump.gif",
-		src: "https://twitter.com/realDonaldTrump/status/260482827458592768"
+		src: "https://twitter.com/realDonaldTrump/status/260482827458592768",
+		profileImg: "assets/images/donald-trump-profile.jpg",
+		twitterHandle: "@realDonaldTrump",
+		audio: ""
+		//https://www.youtube.com/watch?v=u_aLESDql1U
 	},	
 	{
 		question: "kowabunga dudettes. i'm so pumped to be on this surfing kick. who else surfs out there? gnarly day in the h2o. ridin waves!",
 		answers: ["Kim Kardashian","Rihanna","Emma Stone","Lindsay Lohan"],
 		correctAnswer: "Kim Kardashian",
-		imageURL: "assets/images/kim-kardashian-1.gif",
-		src: "https://twitter.com/KimKardashian/status/22396212024"
+		imageURL: "assets/images/kim-kardashian.gif",
+		src: "https://twitter.com/KimKardashian/status/22396212024",
+		profileImg: "assets/images/kim-kardashian-profile.jpg",
+		twitterHandle: "@KimKardashian",
+		audio: ""
 	},
 	{
 		question: "I feel like there's a giant meatloaf inside of me",
 		answers: ["Kris Jenner","Michael Lee Aday","Will Ferrell","Sarah Silverman"],
 		correctAnswer: "Kris Jenner",
 		imageURL: "assets/images/kris-jenner.gif",
-		src: "https://twitter.com/KrisJenner/status/243812456558903296"
+		src: "https://twitter.com/KrisJenner/status/243812456558903296",
+		profileImg: "assets/images/kris-jenner-profile.jpg",
+		twitterHandle: "@KrisJenner",
+		audio: "https://youtu.be/LwzrVEHSlTw?t=12s"
 	},
 	{
 		question: "First tweet of My life",
 		answers: ["Hulk Hogan","Cher","Barack Obama","George W. Bush"],
 		correctAnswer: "Hulk Hogan",
 		imageURL: "assets/images/hulk-hogan.gif",
-		src: "https://twitter.com/HulkHogan/status/21587600569"
+		src: "https://twitter.com/HulkHogan/status/21587600569",
+		profileImg: "assets/images/hulk-hogan-profile.jpg",
+		twitterHandle: "@HulkHogan",
+		audio: "https://youtu.be/zrZt45PEbSk?t=3s"
 	},
 	{
 		question: "@tpa@y#m##@nyhn",
 		answers: ["Oprah Winfrey","Melinda Gates","Ruth Bader Ginsburg","Hillary Clinton"],
 		correctAnswer: "Oprah Winfrey",
 		imageURL: "assets/images/oprah.gif",
-		src: "https://twitter.com/Oprah/status/447783529997271040"
+		src: "https://twitter.com/Oprah/status/447783529997271040",
+		profileImg: "assets/images/oprah-profile.jpg",
+		twitterHandle: "@Oprah",
+		audio: "https://youtu.be/XcI-rHO0yko?t=46s"
 	},
 	{
 		question: "Hey friends, I lost my blackberry. 😢 So if your trying to reach me, then text me on one of my three iPhones. 💋",
 		answers: ["Paris Hilton","Nicole Richie","Kim Kardashian","Lauren Conrad"],
 		correctAnswer: "Paris Hilton",
 		imageURL: "assets/images/paris-hilton.gif",
-		src: "https://twitter.com/ParisHilton/status/449707907769438209"
+		src: "https://twitter.com/ParisHilton/status/449707907769438209",
+		profileImg: "assets/images/paris-hilton-profile.jpg",
+		twitterHandle: "@ParisHilton",
+		audio: "https://youtu.be/M9Z8qjK-bcM?t=6s"
 	},	
 	{
 		question: "JIMMY KIMMEL PUT YOURSELF IN MY SHOES .. OH NO THAT MEANS YOU WOULD HAVE GOTTEN TOO MUCH GOOD PUSSY IN YOUR LIFE...",
 		answers: ["Kanye West","Donald Trump","Alec Baldwin","Chris Brown"],
 		correctAnswer: "Kanye West",
 		imageURL: "assets/images/kanye-west.gif",
-		src: "https://www.usmagazine.com/celebrity-news/news/kim-kardashian-reads-kanye-wests-mean-tweet-about-jimmy-kimmel/"
+		src: "#",
+		profileImg: "assets/images/kanye-west-profile.jpeg",
+		twitterHandle: "@KanyeWest",
+		//https://youtu.be/NUHQpCM7yyY?t=3s
+		audio: "https://www.usmagazine.com/celebrity-news/news/kim-kardashian-reads-kanye-wests-mean-tweet-about-jimmy-kimmel/"
 	},	
 	{
 		question: "I cry because I love Justin Bieber!!!",
 		answers: ["Joe Jonas","Chad Michael Murray","Zac Efron","Shia LaBeouf"],
 		correctAnswer: "Joe Jonas",
 		imageURL: "assets/images/joe-jonas.gif",
-		src: "https://twitter.com/joejonas/status/9753206057"
+		src: "https://twitter.com/joejonas/status/9753206057",
+		profileImg: "assets/images/joe-jonas-profile.jpg",
+		twitterHandle: "@joejonas",
+		audio: ""
 	},	
 	{
 		question: "I AM NOT FAMOUS ANYMORE",
 		answers: ["Shia LaBeouf","James Franco","Jim Carrey","Sacha Baron Cohen"],
 		correctAnswer: "Shia LaBeouf",
 		imageURL: "assets/images/shia-lebeouf.gif",
-		src: "https://twitter.com/thecampaignbook/status/422731823811395584"
+		src: "https://twitter.com/thecampaignbook/status/422731823811395584",
+		profileImg: "assets/images/shia-lebeouf-profile.png",
+		twitterHandle: "@thecampaignbook",
+		audio: "https://youtu.be/o0u4M6vppCI?t=37s"
 	},	
 	{
 		question: "Ice Loves Coco is so romantic :)",
 		answers: ["Miley Cyrus","Selena Gomez","Demi Lovato","Brenda Song"],
 		correctAnswer: "Miley Cyrus",
 		imageURL: "assets/images/miley-cyrus.gif",
-		src: "https://twitter.com/MileyCyrus/status/186126055499771904"
+		src: "https://twitter.com/MileyCyrus/status/186126055499771904",
+		profileImg: "assets/images/miley-cyrus-profile.jpg",
+		twitterHandle: "@MileyCyrus",
+		audio: ""
 	},
 	{
 		question: "Flight attendant on American reamed me out 4 playing WORDS W FRIENDS while we sat at the gate, not moving. #nowonderamericaairisbankrupt",
 		answers: ["Alec Baldwin","Christian Slater","Billie Joe Armstrong","Amanda Bynes"],
 		correctAnswer: "Alec Baldwin",
 		imageURL: "assets/images/alec-baldwin.gif",
-		src: "https://twitter.com/ABFalecbaldwin/status/144174648920260608"
+		src: "https://twitter.com/ABFalecbaldwin/status/144174648920260608",
+		profileImg: "assets/images/alec-baldwin-profile.jpeg",
+		twitterHandle: "@ABFalecbaldwin",
+		audio: "https://youtu.be/t2oVUxTV4WA?t=2m31s"
 	}
 ];
 //Trivia Game Object
@@ -232,6 +309,13 @@ var triviaGame = {
 		$("#gameMessage").removeClass("");
 		$("#gameMessage").show();
 		$("#gameMessage2").show();
+		$("#twitterHandle").html("<a></a>")
+		$("#link").attr("href", this.questionBank[questionNumber].src);
+		$("#link").attr("target","_blank");
+		$("#twitterHandle a").attr("href", this.questionBank[questionNumber].src);
+		$("#twitterHandle a").attr("target","_blank");
+		$("#twitterHandle a").text(this.questionBank[questionNumber].twitterHandle)
+		$("#logo").css("background-image", "url(" + this.questionBank[questionNumber].profileImg + ")");
 		if(this.game === "win"){
 			$("#gameMessage").html("<h4>Correct!</h4>");
 		}
@@ -245,9 +329,16 @@ var triviaGame = {
 		}
 		if(volumeOn === true){
 			$("#tweetSound").get(0).play(); 
+			$("#celebritySound").removeAttr("src");
+			$("#celebritySound").attr("src",this.questionBank[questionNumber].audio);
+			console.log($("#celebritySound"));
+			$("#celebritySound").trigger('play');
 		}
 	},
 	showGIF: function() {
+		$("#logo").css("background-image", "url(assets/images/twitter-icon.png)");
+		$("#link").removeAttr("href");
+		$("#twitterHandle").empty();
 		$("#gameMessage").hide();
 		$("#gameMessage2").hide();
 		$(".multipleChoice").prop("disabled",false);
@@ -260,7 +351,8 @@ var triviaGame = {
 		setTimeout(function(){
 			$("#gifURL").removeAttr("src");
 			$("#gif").hide();
-			$("#content").show()
+			$("#content").show();
+			$("#celebritySound").pause(0).play();
 		}, 5000);
 	},
 	run: function(timer){
@@ -313,6 +405,7 @@ var triviaGame = {
 			this.game = "lose";
 			losses++;
 		}		
+		$(".multipleChoice").prop("disabled",true);
 		this.showMessage();	
 		setTimeout(function(){
 			triviaGame.showGIF();

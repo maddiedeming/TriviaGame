@@ -23,13 +23,14 @@
                     </div>
                     <div id="gif" class="mx-auto text-center" style="width:auto;">
                         <br /><br />
-                        <img class="mx-auto d-block rounded img-fluid"  id="gifURL">
+                        <img class="mx-auto d-block rounded img-fluid" id="gifURL" style="max-height:350px;">
                     </div>
                     <div class="text-center" id="gameMessage"></div>
                     <div id="content" class="mx-auto mt-2" style="font-size:80%;"><br />
                         <blockquote class="twitter-tweet mx-auto">
                             <header class="text-right" >
-                                <div style="height:40px;width:40px;float:left;background-image:url('assets/images/twitter-icon.png');background-size:cover;" class="mb-2 mt-1 d-inline rounded-circle"></div>
+                                <a id="link"><div id="logo" style="height:40px;width:40px;float:left;background-image:url('assets/images/twitter-icon.png');background-size:cover;" class="mb-2 mt-1 d-inline rounded-circle"></div></a>
+                                <h6 id="twitterHandle" style="float:left;line-height:40px;" class="mx-auto pl-2 mb-2 mt-1 d-inline"></h6>
                                 <button id="time" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
                                     <span id="timeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
                                 </button>
@@ -42,6 +43,8 @@
                             <button id="selection2" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection3" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection4" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
+                            <i class="fa fa-heart-o invisible"></i>
+                            <i class="fa fa-heart invisible"></i>
                         </div>
                     </div>
                     <div id="results" class="mx-auto text-center">
@@ -52,6 +55,7 @@
                     <audio id="tweetSound">
                         <source src="assets/audio/tweet.mp3" type="audio/mpeg">
                     </audio>
+                    <audio id="celebritySound"></audio>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
             </div>

@@ -58,3 +58,6 @@ blockquote.twitter-tweet a:visited {
     color:#ffffff;
     background-color:#0275d8;
 }
+a,a:hover {
+    text-decoration: none;
+}
