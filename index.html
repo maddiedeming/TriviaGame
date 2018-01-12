@@ -22,10 +22,10 @@
                         <button id="start" style="font-size:80%" class="btn mx-auto bg-primary text-light mt-3 blink" onclick="triviaGame.reset()">Start</button>
                     </div>
                     <div id="gif" class="mx-auto text-center" style="width:auto;">
-                        <div id="gameMessage"></div>
+                        <br /><br />
                         <img class="mx-auto d-block rounded img-fluid"  id="gifURL">
-                        <div id="gameMessage2"></div>
                     </div>
+                    <div class="text-center" id="gameMessage"></div>
                     <div id="content" class="mx-auto mt-2" style="font-size:80%;"><br />
                         <blockquote class="twitter-tweet mx-auto">
                             <header class="text-right" >
@@ -36,6 +36,7 @@
                             </header><br />
                             <p id="question">This is the question.</p>
                         </blockquote>
+                        <div class="text-center" id="gameMessage2"></div>
                         <div class="text-center buttons">
                             <button id="selection1" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection2" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>

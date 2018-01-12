@@ -226,14 +226,12 @@ var triviaGame = {
 			this.questionBank[questionNumber].answers.splice([selectionNumber],1);
 		}
 	},
-	showGIF: function() {
-		$(".multipleChoice").prop("disabled",false);
-		$(".buttons button").addClass("multipleChoice");
-		$(".multipleChoice").removeClass("btn-danger");
-		$(".multipleChoice").removeClass("btn-success");
+	showMessage: function() {
 		$("#gameMessage").empty();
 		$("#gameMessage2").empty();
 		$("#gameMessage").removeClass("");
+		$("#gameMessage").show();
+		$("#gameMessage2").show();
 		if(this.game === "win"){
 			$("#gameMessage").html("<h4>Correct!</h4>");
 		}
@@ -248,16 +246,20 @@ var triviaGame = {
 		if(volumeOn === true){
 			$("#tweetSound").get(0).play(); 
 		}
+	},
+	showGIF: function() {
+		$("#gameMessage").hide();
+		$("#gameMessage2").hide();
+		$(".multipleChoice").prop("disabled",false);
+		$(".buttons button").addClass("multipleChoice");
+		$(".multipleChoice").removeClass("btn-danger");
+		$(".multipleChoice").removeClass("btn-success");
 		$("#gif").show();
-		$("#gameMessage").show();
-		$("#gameMessage2").show();
 		$("#gifURL").attr("src",this.questionBank[questionNumber].imageURL);
 		$("#content").hide();
 		setTimeout(function(){
 			$("#gifURL").removeAttr("src");
 			$("#gif").hide();
-			$("#gameMessage").hide();
-			$("#gameMessage2").hide();
 			$("#content").show()
 		}, 5000);
 	},
@@ -276,6 +278,7 @@ var triviaGame = {
 					triviaGame.stop();			
 					triviaGame.game = "time";
 					losses++;
+					triviaGame.showMessage();
 					setTimeout(function(){
 						triviaGame.showGIF();
 						triviaGame.questionBank.splice([questionNumber],1);
@@ -309,7 +312,8 @@ var triviaGame = {
 			buttonSelected.addClass("btn-danger");
 			this.game = "lose";
 			losses++;
-		}			
+		}		
+		this.showMessage();	
 		setTimeout(function(){
 			triviaGame.showGIF();
 			triviaGame.questionBank.splice([questionNumber],1);	
