@@ -8,62 +8,95 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
   </head>
-  <body class="text-dark" style="background-color:#b8e6ed;">
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/63702de845.js"></script>  
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 col-md-2"></div>
                 <div class="col-lg-8 col-md-8">
-                    <div class="mx-auto text-center mt-3" style="position:relative;">
-                        <img src="assets/images/twitter-logo.png" style="width:80%;height:80%;"/>
-                        <i id="volumeOff" style="position:absolute;right:-5%;top:-5%;height:20%;width:20%;" class="fa fa-volume-off text-dark" onclick="triviaGame.volumeOff()"></i>
-                        <i id="volumeOn" style="position:absolute;right:-5%;top:-5%;height:20%;width:20%;" class="fa fa-volume-up text-dark" onclick="triviaGame.volumeOn()"></i>
+                    <header class="mx-auto text-center mt-3">
+                        <img id="logo" src="assets/images/twitter-logo.png"/>
+                        <i id="volumeOff" class="fa fa-volume-off text-light" onclick="triviaGame.volumeOff()"></i>
+                        <i id="volumeOn" class="fa fa-volume-up text-light" onclick="triviaGame.volumeOn()"></i>
                         <br/>
-                        <button id="start" style="font-size:80%" class="btn mx-auto bg-primary text-light mt-3 blink" onclick="triviaGame.reset()">Start</button>
-                    </div>
-                    <div id="gif" class="mx-auto text-center" style="width:auto;">
+                        <button id="start" class="btn btn-lg mx-auto bg-primary text-light mt-3 blink" onclick="triviaGame.reset()">Start</button>
+                    </header>
+                    <div id="gif" class="mx-auto text-center">
                         <br /><br />
-                        <img class="mx-auto d-block rounded img-fluid" id="gifURL" style="max-height:350px;">
+                        <img id="gifURL" class="mx-auto d-block rounded img-fluid">
                     </div>
-                    <div class="text-center" id="gameMessage"></div>
-                    <div id="content" class="mx-auto mt-2" style="font-size:80%;"><br />
-                        <blockquote class="twitter-tweet mx-auto">
-                            <header class="text-right" >
-                                <a id="link"><div id="logo" style="height:40px;width:40px;float:left;background-image:url('assets/images/twitter-icon.png');background-size:cover;" class="mb-2 mt-1 d-inline rounded-circle"></div></a>
-                                <h6 id="twitterHandle" style="float:left;line-height:40px;" class="mx-auto pl-2 mb-2 mt-1 d-inline"></h6>
-                                <button id="time" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
-                                    <span id="timeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
+                    <div id="gameMessage" class="text-center text-light"></div>
+                    
+                    <div id="content" class="mx-auto mt-2"><br />
+                        <blockquote class="twitter-tweet mx-auto text-right pt-5">
+                            <header class="text-left">
+                                <img id="bonusCrown" src="assets/images/bonus-crown.png" class="text-left" onclick="triviaGame.bonusRound()" /> 
+                                <a id="link"><div id="profileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left"></div></a>
+                                <h6 id="twitterHandle" class="twitterHandle mx-auto pl-2 mb-2 mt-1 d-inline text-left"></h6>
+                                <div class="text-right">
+                                    <button id="time" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
+                                        <span id="timeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
                                 </button>
+                                </div>
                             </header><br />
-                            <p id="question">This is the question.</p>
+                            <p class="text-left" id="question"></p>
                         </blockquote>
-                        <div class="text-center" id="gameMessage2"></div>
+                        <div class="text-center text-light" id="gameMessage2"></div>
                         <div class="text-center buttons">
                             <button id="selection1" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection2" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection3" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection4" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
-                            <i class="fa fa-heart-o invisible"></i>
-                            <i class="fa fa-heart invisible"></i>
                         </div>
                     </div>
-                    <div id="results" class="mx-auto text-center">
-                        <h1>How'd You Do?</h1>
+
+                    <div id="results" class="mx-auto text-center text-light">
+                        <h1>GAME OVER</h1>
                         <h2 id="wins"></h2>
                         <h2 id="losses"></h2>
                     </div>
-                    <audio id="tweetSound">
-                        <source src="assets/audio/tweet.mp3" type="audio/mpeg">
-                    </audio>
-                    <audio id="celebritySound"></audio>
+                    <div id="bonusRound" class="mx-auto mt-3 text-center">
+                        <div id="bonusRoundTitle" class="mx-auto text-center text-light">
+                            <h3>BONUS ROUND</h3>
+                            <h6>TRUMP OR KANYE?</h6>
+                        </div>
+                    </div>
+                    <div id="sounds">
+                        <audio id="twitterSong">
+                            <source src="assets/audio/twitter-song.mp3" type="audio/mpeg">
+                        </audio>
+                        <audio id="tweetSound">
+                            <source src="assets/audio/tweet.mp3" type="audio/mpeg">
+                        </audio>
+                        <audio id="money">
+                            <source src="assets/audio/money.mp3" type="audio/mpeg">
+                        </audio>
+                        <audio id="god">
+                            <source src="assets/audio/i-am-a-god.mp3" type="audio/mpeg" >
+                        </audio>
+                        <audio id="popSound">
+                            <source src="assets/audio/pop.mp3" type="audio/mpeg">
+                        </audio>
+                        <audio id="kanyeHead">
+                            <source src="assets/audio/i-am-warhol.mp3" type="audio/mpeg" >
+                        </audio>
+                        <audio id="trumpHead">
+                            <source src="assets/audio/greatest-president.mp3" type="audio/mpeg" >
+                        </audio>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
             </div>
         </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>   
+
+        <div id="animations">
+            <div id="heart" class="animation heart d-inline-block m-1"></div>
+        </div>
     <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>

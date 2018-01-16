@@ -1,4 +1,41 @@
-blockquote.twitter-tweet {
+body {
+    background-color: #2A3947;
+    color: #2A3947;
+}
+header {
+    position:relative;
+}
+#logo {
+    width:80%;
+    height:80%;
+}
+#volumeOn,#volumeOff  {
+    position:absolute;
+    right:-5%;
+    top:-5%;
+    height:20%;
+    width:20%;
+    opacity: 0.5;
+}
+#volumeOn:hover,#volumeOff:hover {
+    opacity: 1;
+}
+#gifURL {
+    max-height:350px;
+}
+#start {
+    font-size:100%
+}
+#gif {
+    width:auto;
+}
+#content {
+    font-size:80%;
+}
+blockquote {
+    position:relative;
+}
+.twitter-tweet {
     overflow: hidden;
     color: #1c2022;
     background-color: #fff;
@@ -9,25 +46,19 @@ blockquote.twitter-tweet {
     min-width: 220px;
     padding: 1.25rem 1.25rem 0.725rem 1.25rem;
 }
-blockquote.twitter-tweet:before {
+.twitter-tweet:before {
     content: none;
 }
-blockquote.twitter-tweet p {
+.twitter-tweet p {
     white-space: pre-wrap;
     font-family: 16px/1.4 "Segoe UI",Arial,sans-serif;
     /* font: 16px/1.4 Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif; */
 }
-blockquote.twitter-tweet a {
+.twitter-tweet a {
     color: #2b7bb9;
 }
-blockquote.twitter-tweet a:visited {
+.twitter-tweet a:visited {
     color: #2b7bb9;
-}
-#volumeOff, #volumeOn {
-    opacity: 0.5;
-}
-#volumeOff:hover, #volumeOn:hover {
-    opacity: 1;
 }
 @-webkit-keyframes blinker {
     from {opacity: 1;}
@@ -51,7 +82,7 @@ blockquote.twitter-tweet a:visited {
     -webkit-animation-iteration-count:infinite;
 }
 .multipleChoice {
-    color:#0275d8;
+    /* color:#0275d8; */
     background-color:#b8e6ed;
 }
 .multipleChoice:hover {
@@ -60,4 +91,126 @@ blockquote.twitter-tweet a:visited {
 }
 a,a:hover {
     text-decoration: none;
+}
+@-webkit-keyframes crownHover {
+    0%   {transform: rotate(0deg);}
+    25%  {transform: rotate(7deg);}
+    50%  {transform: rotate(0deg);}
+    75% {transform: rotate(-7deg);}
+    100% {transform: rotate(0deg);}
+  }
+#bonusCrown {
+    height:47.5px;
+    width:55.5px;
+    position:absolute;
+    top:-70%;
+    left:-3.5%;
+    z-index:1;
+}
+#bonusCrown:hover{
+    -webkit-animation-name: crownHover;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:infinite;
+}
+#profileLogo{
+    height:40px;
+    width:40px;
+    position:relative;
+    background-image:url('../images/twitter-icon.png');
+    background-size:cover;
+    float:left;
+}
+.bonusProfileLogo{
+    height:40px;
+    width:40px;
+    position:relative;
+    /* background-image:url('../images/twitter-icon.png');
+    background-size:cover; */
+    float:left;
+}
+.trumpButton{
+    background-color: #2a3947;
+    /* height:50px;
+    width:50px; */
+    height: 100px;
+    width: 100px;
+    /* position:relative; */
+    background-image:url('../images/donald-head.png');
+    background-size:contain;  
+    background-repeat: no-repeat;
+    background-position: center;
+    /* float:left; */
+}
+.trumpButton:hover{
+    transform: rotate(-15deg);
+    /* transition-duration: 0.5s; */
+    /* animation-iteration-count: infinite; */
+}
+.kanyeButton:hover{
+    transform: rotate(15deg);
+
+    /* transition-duration: 0.5s; */
+    /* animation-iteration-count: infinite; */
+}
+.kanyeButton{
+    background-color: #2a3947;
+    /* height:50px;
+    width:50px; */
+    height: 100px;
+    width: 100px;
+    /* position:relative; */
+    background-image:url('../images/kanye-head.png');
+    background-size:contain;  
+    background-repeat: no-repeat;
+    background-position: center;
+    /* float:right; */
+}
+.twitterHandle {
+    float:left;
+    line-height:40px;
+}
+#animations {
+    position: relative;
+}
+#heart{
+    text-align: center;
+    height: 100px;
+    width: 100px; 
+    position: relative;
+}
+#heart p {
+    animation: heart-burst-text 2s steps(28) 1;
+    position: absolute;
+    top: 38%;
+    right:46%;
+    font-weight:bold;
+}
+.heart {
+    height: 50px;
+    width: 50px;
+    background-image:url('https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+    background-position: left;
+    background-repeat:no-repeat;
+    background-size:2900%;
+    animation: heart-burst 2s steps(28) 1;
+}
+.animation {
+    position: absolute;
+    top: 350px;
+  }
+@keyframes heart-burst-text {
+    0% {
+        color:white;
+    }
+    75% {
+        color:black;
+    }
+}
+@keyframes heart-burst {
+    0% {
+        background-position:left;
+    }
+    50% {
+        background-position:right;
+    }
 }
