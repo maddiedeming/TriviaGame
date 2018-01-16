@@ -395,7 +395,7 @@ var triviaGame = {
 		}
 	},
 	showGIF: function() {
-		$("#kanyeCrown,#gameMessage,#gameMessage2,#content").hide();
+		$("#bonusCrown,#gameMessage,#gameMessage2,#content").hide();
 		$("#gif").show();
 		$(".multipleChoice,.btn-success,.btn-danger").prop("disabled",false);
 		$("#link").removeAttr("href");
