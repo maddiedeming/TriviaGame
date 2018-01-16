@@ -221,7 +221,7 @@ a {
     #bonusCrown{
         /* position:absolute; */
         top:-30%;
-        left:-7%;
+        left:-5%;
         /* z-index:1; */
         -webkit-animation-name: crownHover;
         -webkit-animation-duration: 1s;
