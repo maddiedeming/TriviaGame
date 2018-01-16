@@ -97,7 +97,17 @@ a {
     left:-3.5%;
     z-index:1;
 }
-
+#bonusCrown:hover{
+    -webkit-animation-name: crownHover;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:infinite;
+}
+.trumpButton:hover{
+    transform: rotate(-15deg);
+}
+.kanyeButton:hover{
+    transform: rotate(15deg);
+}
 #profileLogo{
     height:40px;
     width:40px;
@@ -113,6 +123,18 @@ a {
     /* background-image:url('../images/twitter-icon.png');
     background-size:cover; */
     float:left;
+}
+#bonusTrump{
+    position:absolute;
+    z-index:1;
+    left:5%;
+    bottom:25%
+}
+#bonusKanye{
+    position:absolute;
+    z-index:1;
+    right:5%;
+    bottom:25%
 }
 .trumpButton{
     background-color: #2a3947;
@@ -198,43 +220,67 @@ a {
     }
     #bonusCrown{
         /* position:absolute; */
-        top:-70%;
-        left: -5%;
-        /* left:-3.5%; */
+        top:-30%;
+        left:-7%;
         /* z-index:1; */
         -webkit-animation-name: crownHover;
         -webkit-animation-duration: 1s;
         -webkit-animation-iteration-count:infinite;
     }
     .trumpButton{
-        transform: rotate(-15deg);
+        display: inline-block;
+        float:left;
+        height: 50px;
+        width:50px;
+        -webkit-animation-name: blinker;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-timing-function:ease-in-out;
+        -webkit-animation-direction: alternate;
+        margin-bottom: 10%;
     }
     .kanyeButton{
-        transform: rotate(15deg);
+        display: inline-block;
+        float:right;
+        height: 50px;
+        width:50px;
+        -webkit-animation-name: blinker;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-timing-function:ease-in-out;
+        -webkit-animation-direction: alternate;
+        margin-bottom: 10%;
     }
  }
 
 /* Small devices */
-@media (max-width: 767px) { 
+@media (max-width: 767px) and (min-width: 576px) { 
     .multipleChoice {
         color:#ffffff;
         background-color:#0275d8;
     }
     #bonusCrown{
         left: -3%;
+        /* left:-3.5%; */
         -webkit-animation-name: crownHover;
         -webkit-animation-duration: 1s;
         -webkit-animation-iteration-count:infinite;
     }
-    .trumpButton{
-        transform: rotate(-15deg);
+    #bonusTrump{
+        position:absolute;
+        z-index:1;
+        left:5%;
+        bottom:25%
     }
-    .kanyeButton{
-        transform: rotate(15deg);
+    #bonusKanye{
+        position:absolute;
+        z-index:1;
+        right:5%;
+        bottom:25%
     }
 
 /* Medium devices */
-@media (max-width: 991px) { 
+@media (max-width: 991px) and (min-width: 768px) { 
     .blink:hover{
         text-decoration: blink;
         -webkit-animation-name: blinkerHover;
@@ -248,21 +294,36 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
+    #bonusCrown{
+        left: -5%;
+    }
     #bonusCrown:hover{
         -webkit-animation-name: crownHover;
         -webkit-animation-duration: 1s;
         -webkit-animation-iteration-count:infinite;
     }
     .trumpButton:hover{
-        transform: rotate(-15deg);
+        transform: rotate(0deg);
     }
     .kanyeButton:hover{
-        transform: rotate(15deg);
+        transform: rotate(0deg);
+    }
+    #bonusTrump{
+        position:absolute;
+        z-index:1;
+        left:5%;
+        bottom:25%
+    }
+    #bonusKanye{
+        position:absolute;
+        z-index:1;
+        right:5%;
+        bottom:25%
     }
  }
 
 /* Large devices */
-@media (max-width: 1199px) { 
+@media (min-width: 992px) { 
     .blink:hover{
         text-decoration: blink;
         -webkit-animation-name: blinkerHover;
@@ -276,15 +337,8 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
-    #bonusCrown:hover{
-        -webkit-animation-name: crownHover;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-iteration-count:infinite;
-    }
-    .trumpButton:hover{
-        transform: rotate(-15deg);
-    }
-    .kanyeButton:hover{
-        transform: rotate(15deg);
+
+    .trumpButton,.kanyeButton {
+        position: relative;
     }
  }

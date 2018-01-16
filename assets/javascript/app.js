@@ -644,7 +644,7 @@ var triviaGame = {
 			var newId = "animation"+ i;
 			$("#heart").clone().attr('style','right: ' + 13*i + 'px').attr('id',newId).appendTo($("#animations"));
 		}
-		$("#heart").appendTo($("#bonusRound"));
+		$("#heart").appendTo($("#bonusRoundTitle"));
 		$("#animations,#bonusRound").show();
 		$("#heart").removeClass("animation");
 		heartCount = 0;
