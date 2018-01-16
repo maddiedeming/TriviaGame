@@ -44,7 +44,7 @@
                                 </button>
                                 </div>
                             </header><br />
-                            <p class="text-left" id="question"></p>
+                            <p class="text-left" id="tweet"></p>
                         </blockquote>
                         <div class="text-center text-light" id="gameMessage2"></div>
                         <div class="text-center buttons">
@@ -65,6 +65,27 @@
                             <h3>BONUS ROUND</h3>
                             <h6>TRUMP OR KANYE?</h6>
                         </div>
+                        <div id="bonus" style="position:relative;">
+                            <div id="bonusTrump" style="position:absolute;z-index:1;left:5%;bottom:25%">
+                                <button id="trumpButton" class="trumpButton btn" onclick="triviaGame.bonusClick(this)"></button>
+                            </div>
+                            <div id="bonusKanye" style="position:absolute;z-index:1;right:5%;bottom:25%">
+                                <button id="kanyeButton" class="kanyeButton btn" onclick="triviaGame.bonusClick(this)"></button>
+                            </div>	
+                        </div>
+                        <blockquote id="bonusTweet" style="display:inline-block" class="twitter-tweet">
+                            <header class="text-left">
+                                <div id="bonusProfileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left bonusProfileLogo"></div>
+                                <h6 id="bonusHandle" class="twitterHandle mx-auto pl-2 mb-2 mt-1 d-inline text-left"></h6>
+                                <div class="text-right">
+                                    <button id="bonusTime" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
+                                        <span id="bonusTimeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
+                                    </button>
+                                </div>
+                            </header>
+                        <br />
+                        <p class="text-left" id="bonustweet"></p>
+                        </blockquote>
                     </div>
                     <div id="sounds">
                         <audio id="twitterSong">

@@ -17,9 +17,7 @@ header {
     width:20%;
     opacity: 0.5;
 }
-#volumeOn:hover,#volumeOff:hover {
-    opacity: 1;
-}
+
 #gifURL {
     max-height:350px;
 }
@@ -75,21 +73,13 @@ blockquote {
 @-webkit-keyframes blinkerHover {
     100% {opacity: 1;}
   }
-.blink:hover{
-    text-decoration: blink;
-    -webkit-animation-name: blinkerHover;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count:infinite;
-}
+
 .multipleChoice {
     /* color:#0275d8; */
     background-color:#b8e6ed;
 }
-.multipleChoice:hover {
-    color:#ffffff;
-    background-color:#0275d8;
-}
-a,a:hover {
+
+a {
     text-decoration: none;
 }
 @-webkit-keyframes crownHover {
@@ -107,11 +97,7 @@ a,a:hover {
     left:-3.5%;
     z-index:1;
 }
-#bonusCrown:hover{
-    -webkit-animation-name: crownHover;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count:infinite;
-}
+
 #profileLogo{
     height:40px;
     width:40px;
@@ -140,17 +126,6 @@ a,a:hover {
     background-repeat: no-repeat;
     background-position: center;
     /* float:left; */
-}
-.trumpButton:hover{
-    transform: rotate(-15deg);
-    /* transition-duration: 0.5s; */
-    /* animation-iteration-count: infinite; */
-}
-.kanyeButton:hover{
-    transform: rotate(15deg);
-
-    /* transition-duration: 0.5s; */
-    /* animation-iteration-count: infinite; */
 }
 .kanyeButton{
     background-color: #2a3947;
@@ -214,3 +189,102 @@ a,a:hover {
         background-position:right;
     }
 }
+
+/* Extra small devices */
+@media (max-width: 575px) { 
+    .multipleChoice {
+        color:#ffffff;
+        background-color:#0275d8;
+    }
+    #bonusCrown{
+        /* position:absolute; */
+        top:-70%;
+        left: -5%;
+        /* left:-3.5%; */
+        /* z-index:1; */
+        -webkit-animation-name: crownHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    .trumpButton{
+        transform: rotate(-15deg);
+    }
+    .kanyeButton{
+        transform: rotate(15deg);
+    }
+ }
+
+/* Small devices */
+@media (max-width: 767px) { 
+    .multipleChoice {
+        color:#ffffff;
+        background-color:#0275d8;
+    }
+    #bonusCrown{
+        left: -3%;
+        -webkit-animation-name: crownHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    .trumpButton{
+        transform: rotate(-15deg);
+    }
+    .kanyeButton{
+        transform: rotate(15deg);
+    }
+
+/* Medium devices */
+@media (max-width: 991px) { 
+    .blink:hover{
+        text-decoration: blink;
+        -webkit-animation-name: blinkerHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .multipleChoice:hover {
+        color:#ffffff;
+        background-color:#0275d8;
+    }
+    #bonusCrown:hover{
+        -webkit-animation-name: crownHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    .trumpButton:hover{
+        transform: rotate(-15deg);
+    }
+    .kanyeButton:hover{
+        transform: rotate(15deg);
+    }
+ }
+
+/* Large devices */
+@media (max-width: 1199px) { 
+    .blink:hover{
+        text-decoration: blink;
+        -webkit-animation-name: blinkerHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .multipleChoice:hover {
+        color:#ffffff;
+        background-color:#0275d8;
+    }
+    #bonusCrown:hover{
+        -webkit-animation-name: crownHover;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count:infinite;
+    }
+    .trumpButton:hover{
+        transform: rotate(-15deg);
+    }
+    .kanyeButton:hover{
+        transform: rotate(15deg);
+    }
+ }
