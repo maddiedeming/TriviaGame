@@ -4,6 +4,7 @@ var timer;
 var heartCount;
 var bonusCount = 0;
 var bonusHead = ""
+var bonusComplete = false;
 //Intial Page Load
 $("#content,#time,#gifURL,#results,#volumeOn,#gameMessage,#gameMessage2,#bonusCrown,#bonusRoundTitle,#animations,#bonusRound,#sounds").hide();
 
@@ -607,6 +608,8 @@ var triviaGame = {
 		bonusQuestions.splice([y],1);
 	},
 	bonusRound: function(){
+		if(bonusComplete === false)
+		{
 		$("#twitterSong").get(0).pause();
 		if(this.volume === true){
 			var delayAudio = 0;
@@ -675,7 +678,9 @@ var triviaGame = {
 		this.bonusQuestion();
 		this.gameData.bonusRound = true;
 		this.endGame();	
+		bonusComplete = true;
 		this.gameData.running = false;
+		}
 	},
 	reset: function() {
 		document.getElementById("twitterSong").currentTime = 48;
