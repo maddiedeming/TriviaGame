@@ -90,8 +90,8 @@ a {
     height:47.5px;
     width:55.5px;
     position:absolute;
-    top:-30%;
-    left:-3%;
+    top:-45%;
+    left:-3.5%;
     z-index:1;
 }
 #bonusCrown:hover{
@@ -99,12 +99,7 @@ a {
     animation-duration: 1s;
     animation-iteration-count:infinite;
 }
-.trumpButton:hover{
-    transform: rotate(-15deg);
-}
-.kanyeButton:hover{
-    transform: rotate(15deg);
-}
+
 #bonusRound{
     font-size:80%;
 }
@@ -221,7 +216,7 @@ a {
     #bonusCrown{
         /* position:absolute; */
         /* top:-30%; */
-        /* left:-5%; */
+        left:-6%;
         /* z-index:1; */
         animation-name: crownHover;
         animation-duration: 1s;
@@ -302,11 +297,11 @@ a {
         animation-duration: 1s;
         animation-iteration-count:infinite;
     }
-    .trumpButton:hover {
-        transform: rotate(0deg);
+    .trumpButton:hover{
+        transform: rotate(-15deg);
     }
-    .kanyeButton:hover {
-        transform: rotate(0deg);
+    .kanyeButton:hover{
+        transform: rotate(15deg);
     }
     #bonusTrump {
         position:absolute;
@@ -337,7 +332,12 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
-
+    .trumpButton:hover{
+        transform: rotate(-15deg);
+    }
+    .kanyeButton:hover{
+        transform: rotate(15deg);
+    }
     .trumpButton,.kanyeButton {
         position: relative;
     }

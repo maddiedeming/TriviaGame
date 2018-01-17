@@ -519,7 +519,7 @@ var triviaGame = {
 			}			
 		}
 		setTimeout(function(){	
-			if (bonusCount < 2){
+			if (bonusCount < 12){
 				$("#bonus,#bonusTweetText,#bonusHandle,#bonusProfileLogo,#bonusTime,#bonusTimeRemaining,#bonusTweet").fadeOut("slow");
 				setTimeout(function(){
 					$("#bonusHandle").text("");	
