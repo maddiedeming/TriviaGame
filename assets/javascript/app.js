@@ -3,11 +3,11 @@ var x;
 var timer;
 var heartCount;
 var bonusCount = 0;
-var bonusHead = ""
+var bonusHead = "";
 var bonusComplete = false;
 //Intial Page Load
-$("#content,#time,#gifURL,#results,#volumeOn,#gameMessage,#gameMessage2,#bonusCrown,#bonusRoundTitle,#animations,#bonusRound,#sounds,#bonus,#bonusTweet").hide();
-//tweet Data
+$("#content,#time,#gifURL,#results,#volumeOn,#bonusCrown,#bonusRoundTitle,#animations,#bonusRound,#sounds,#bonus,#bonusTweet,#bonusTweetText,#gameMessage2,#bonusGif").hide();
+//Tweet Data
 var tweetBank = [
 	{
 		tweet: "Do ants have dicks?",
@@ -32,30 +32,6 @@ var tweetBank = [
 		src: "https://twitter.com/cher/status/194552615672102912",
 		profileImg: "assets/images/cher-profile.jpg",
 		twitterHandle: "@cher"
-	},
-	{
-		tweet: "WAS RUSHIN HOME TO TAKE A DUMP AND GOT CAUGHT BEHIND A SCHOOL BUS DROPPIN KIDS OFF!! LONGEST 30MINS OF MY LIFFFEEEE!!",
-		answers: ["Lil' Jon","50 Cent","Jay Z","Kanye West"],
-		correctAnswer: "Lil' Jon",
-		src: "https://twitter.com/LilJon/status/25815827140",
-		profileImg: "assets/images/lil-jon-profile.jpg",
-		twitterHandle: "@LilJon"
-	},
-	{
-		tweet: "Dear elderly man at the gym:its hard 4 me 2 keep composure whilst punching at chipmunk speed when ur ball sack spills out of ur wind shorts",
-		answers: ["Jessica Simpson","Britney Spears","Tara Reid","Mariah Carey"],
-		correctAnswer: "Jessica Simpson",
-		src: "https://twitter.com/JessicaSimpson/status/7727845556",
-		profileImg: "assets/images/jessica-simpson-profile.jpg",
-		twitterHandle: "@JessicaSimpson"
-	},
-	{
-		tweet: "I can't believe my grand mothers making me take Out the garbage I'm rich fuck this I'm going home I don't need this shit",
-		answers: ["50 Cent","Kanye West","Justin Bieber","Gucci Mane"],
-		correctAnswer: "50 Cent",
-		src: "https://twitter.com/50cent/status/22201409032",
-		profileImg: "assets/images/50-cent-profile.jpg",
-		twitterHandle: "@50cent"
 	},
 	{
 		tweet: "i am still alive",
@@ -114,22 +90,6 @@ var tweetBank = [
 		twitterHandle: "@MarthaStewart"
 	},
 	{
-		tweet: "pee pee on the street. PoPo come n get me if u can find meeee. I blame traffik.",
-		answers: ["Ke$ha","Jamie Kennedy","Riff Raff","Iggy Azalea"],
-		correctAnswer: "Ke$ha",
-		src: "https://twitter.com/KeshaRose/status/195025413876092928",
-		profileImg: "assets/images/kesha-profile.jpg",
-		twitterHandle: "@KeshaRose"
-	},
-	{
-		tweet: "Everyone knows I am right that Robert Pattinson should dump Kristen Stewart. In a couple of years, he will thank me. Be smart, Robert.",
-		answers: ["Donald Trump","Kanye West","Charlie Sheen","Perez Hilton"],
-		correctAnswer: "Donald Trump",
-		src: "https://twitter.com/realDonaldTrump/status/260482827458592768",
-		profileImg: "assets/images/donald-trump-profile.jpg",
-		twitterHandle: "@realDonaldTrump"
-	},	
-	{
 		tweet: "kowabunga dudettes. i'm so pumped to be on this surfing kick. who else surfs out there? gnarly day in the h2o. ridin waves!",
 		answers: ["Kim Kardashian","Rihanna","Emma Stone","Lindsay Lohan"],
 		correctAnswer: "Kim Kardashian",
@@ -170,23 +130,6 @@ var tweetBank = [
 		twitterHandle: "@ParisHilton"
 	},	
 	{
-		tweet: "JIMMY KIMMEL PUT YOURSELF IN MY SHOES .. OH NO THAT MEANS YOU WOULD HAVE GOTTEN TOO MUCH GOOD PUSSY IN YOUR LIFE...",
-		answers: ["Kanye West","Donald Trump","Alec Baldwin","Chris Brown"],
-		correctAnswer: "Kanye West",
-		src: "#",
-		profileImg: "assets/images/kanye-west-profile.jpeg",
-		twitterHandle: "@KanyeWest"
-		//https://youtu.be/NUHQpCM7yyY?t=3s
-	},	
-	{
-		tweet: "I cry because I love Justin Bieber!!!",
-		answers: ["Joe Jonas","Chad Michael Murray","Zac Efron","Shia LaBeouf"],
-		correctAnswer: "Joe Jonas",
-		src: "https://twitter.com/joejonas/status/9753206057",
-		profileImg: "assets/images/joe-jonas-profile.jpg",
-		twitterHandle: "@joejonas"
-	},	
-	{
 		tweet: "I AM NOT FAMOUS ANYMORE",
 		answers: ["Shia LaBeouf","James Franco","Jim Carrey","Sacha Baron Cohen"],
 		correctAnswer: "Shia LaBeouf",
@@ -209,6 +152,22 @@ var tweetBank = [
 		src: "https://twitter.com/ABFalecbaldwin/status/144174648920260608",
 		profileImg: "assets/images/alec-baldwin-profile.jpeg",
 		twitterHandle: "@ABFalecbaldwin"
+	},
+	{
+		tweet: "I would like to extend my best wishes to all, even the haters and losers, on this special date, September 11th.",
+		answers: ["Donald Trump","Kanye West","Charlie Sheen","Perez Hilton"],
+		correctAnswer: "Donald Trump",
+		src: "https://twitter.com/realDonaldTrump/status/377947866641485824",
+		profileImg: "assets/images/donald-trump-profile.jpg",
+		twitterHandle: "@realDonaldTrump"
+	},	
+	{
+		tweet: "JIMMY KIMMEL IS OUT OF LINE TO TRY AND SPOOF IN ANY WAY THE FIRST PIECE OF HONEST MEDIA IN YEARS",
+		answers: ["Kanye West","Donald Trump","Alec Baldwin","Chris Brown"],
+		correctAnswer: "Kanye West",
+		src: "#",
+		profileImg: "assets/images/kanye-west-profile.jpeg",
+		twitterHandle: "@KanyeWest"
 	}
 ];
 var bonusTweets = [	
@@ -216,84 +175,72 @@ var bonusTweets = [
 		tweet: "Also for anyone that has money they know the first rule is to use other people's money.",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
 		tweet: "I have never seen a thin person drinking Diet Coke.",
 		correctAnswer: "Donald Trump",
 		src: "https://twitter.com/realDonaldTrump/status/257552283850653696",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
 		twitterHandle: "@realDonaldTrump"
 	},
 	{
-		tweet: "We want to innovate and we will win someday.",
+		tweet: "What is your definition of true freedom? There is no true freedom without economic freedom.",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
 		tweet: "Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please don't feel so stupid or insecure,it's not your fault",
 		correctAnswer: "Donald Trump",
 		src: "https://twitter.com/realDonaldTrump/status/332308211321425920",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
 		twitterHandle: "@realDonaldTrump"
 	},
 	{
-		tweet: "The doors may be heavier, but I promise you WE WILL BREAK THEM.",
+		tweet: "I especially hate suit jackets on women… that was a groundbreaking idea 5 million years ago!",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
 		tweet: "My twitter has become so powerful that I can actually make my enemies tell the truth.",
 		correctAnswer: "Donald Trump",
 		src: "https://twitter.com/realDonaldTrump/status/258584864163500033",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
 		twitterHandle: "@realDonaldTrump"
 	},
 	{
-		tweet: "Yes I am personally rich and I can buy furs and houses for my family",
+		tweet: "The world needs a guy like me. The world needs somebody to not be scared and tell his truth.",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
-		tweet: "President Obama - close down the flights from Ebola infected areas right now, before it is too late! What the hell is wrong with you?",
+		tweet: "Everyone knows I am right that Robert Pattinson should dump Kristen Stewart. In a couple of years, he will thank me. Be smart, Robert.",
 		correctAnswer: "Donald Trump",
-		src: "https://twitter.com/realDonaldTrump/status/518552645414690816",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
+		src: "https://twitter.com/realDonaldTrump/status/260482827458592768",
 		twitterHandle: "@realDonaldTrump"
 	},
 	{
-		tweet: "I have no interest in working with anyone who is too important or too good or too traditional to take a call at 3am",
+		tweet: "I guess in a media world where you never hear the truth, the truth can come off as crazy…",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
 		tweet: ".@katyperry Katy, what the hell were you thinking when you married loser Russell Brand. There is a guy who has got nothing going, a waste!",
 		correctAnswer: "Donald Trump",
 		src: "https://twitter.com/realDonaldTrump/status/522897870891261952",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
 		twitterHandle: "@realDonaldTrump"
 	},
 	{
 		tweet: "I'd like to address the false stories and noise that have been engineered by the media.",
 		correctAnswer: "Kanye West",
 		src: "#",
-		//profileImg: "assets/images/kanye-west-profile.jpeg",
 		twitterHandle: "@KanyeWest"
 	},
 	{
 		tweet: "Sorry, there is no STAR on the stage tonight!",
 		correctAnswer: "Donald Trump",
 		src: "https://twitter.com/realDonaldTrump/status/654114913888174081",
-		//profileImg: "assets/images/donald-trump-profile.jpeg",
 		twitterHandle: "@realDonaldTrump"
 	}
 ];
@@ -311,22 +258,21 @@ var triviaGame = {
 	tweetBank: [],
 	getGif: function(){
 		var regex = /\s/g;
-		var query = "https://api.giphy.com/v1/gifs/search?";
-		var search = "q=";
+		var query = "https://api.giphy.com/v1/gifs/random?tag=";
 		var celebrity = triviaGame.tweetBank[x].correctAnswer.replace(regex, "+");
-		var limit = "&limit=100"
 		var apiKey = "&apikey=C5d75scOHxPnli61nvl3JPjObqAnq7Ub";		
-		var queryURL = query + search + celebrity + limit + apiKey;	  
+		var queryURL = query + celebrity + apiKey;	  
 		$.ajax(this.href, {
 			url: queryURL,
 			method: "GET"
 		}).done(function(response) {
-			var randomGif = Math.floor(Math.random() * response.data.length);
-			triviaGame.tweetBank[x].gifURL = response.data[randomGif].images.original.url;
-		})
+			triviaGame.tweetBank[x].gifURL = response.data.image_original_url;
+			console.log(triviaGame.tweetBank[x].gifURL);
+		});
 	},
 	endGame: function(){
 		this.gameData.running = false;
+		timer = 15;
 		this.stop();
 		$("#timeRemaining").text(15);
 		$(".multipleChoice").removeAttr("value");
@@ -340,14 +286,15 @@ var triviaGame = {
 	stop: function(){
 		clearInterval(this.intervalTime);
 	},
-	settweet: function(){
+	setTweet: function(){
 		x = Math.floor(Math.random() * this.tweetBank.length);
 		$("#tweet").text(this.tweetBank[x].tweet);
 		this.getGif();
 		var idNumber = 1;
-		for(i = 0; i < 4; i++){
+		var selectId = "";
+		for (var i = 0; i < 4; i++) {
 			selectionNumber = Math.floor(Math.random() * this.tweetBank[x].answers.length);
-			var selectId = "#selection" + idNumber;
+			selectId = "#selection" + idNumber;
 			idNumber = idNumber + 1;
 			$(selectId).text(this.tweetBank[x].answers[selectionNumber]);
 			$(selectId).val(this.tweetBank[x].answers[selectionNumber]);
@@ -356,24 +303,25 @@ var triviaGame = {
 	},
 	showMessage: function() {
 		$("#gameMessage,#gameMessage2").empty();
-		$("#gameMessage,#gameMessage2").show();
-		$("#twitterHandle").html("<a>")
+		$("#gameMessage").removeClass("invisible");
+		$("#gameMessage2").show();
+		//$("#gameMessage,#gameMessage2").show();
+		$("#twitterHandle").html("<a>");
 		$("#link,#twitterHandle a").attr({href:this.tweetBank[x].src, target:"_blank"});
-		$("#twitterHandle a").text(this.tweetBank[x].twitterHandle)
+		$("#twitterHandle a").text(this.tweetBank[x].twitterHandle);
 		$("#profileLogo").css("background-image", "url(" + this.tweetBank[x].profileImg + ")");
 		if(this.gameData.game === "win"){
 			if(this.volume === true){
 				$("#popSound").get(0).play(); 
 			}
 			$("#gameMessage").html("<h4>Correct!</h4>");
-			if($(".btn-success").val() === "Kanye West"){
+			if($(".btn-success").val() === "Kanye West" && bonusComplete === false || $(".btn-success").val() === "Donald Trump"  && bonusComplete === false){
 				$("#bonusCrown").show();
-			}
-			else if($(".btn-success").val() === "Donald Trump"){
-				$("#bonusCrown").show();
+				$("#content blockquote").addClass("pt-5");
 			}
 			else{
 				$("#bonusCrown").hide();
+				$("#content blockquote").removeClass("pt-5");
 			}
 		}
 		else if(this.gameData.game === "lose"){
@@ -392,7 +340,9 @@ var triviaGame = {
 		}
 	},
 	showGIF: function() {
-		$("#bonusCrown,#gameMessage,#gameMessage2,#content").hide();
+		//$("#bonusCrown,#gameMessage,#gameMessage2,#content").hide();
+		$("#bonusCrown,#content,#gameMessage2").hide();
+		$("#gameMessage").addClass("invisible");
 		$("#gif").show();
 		$(".multipleChoice,.btn-success,.btn-danger").prop("disabled",false);
 		$("#link").removeAttr("href");
@@ -409,7 +359,6 @@ var triviaGame = {
 				$("#content").show();
 				timer = 16;
 			}, 3000);
-
 		}
 		else{
 			$("#gifURL").removeAttr("src");
@@ -421,21 +370,20 @@ var triviaGame = {
 
 	},
 	run: function(){
-		timer = 16;
+		timer = 15;
 		this.stop();
 		if(this.tweetBank.length > 0){
-			this.settweet();
+			this.setTweet();
 			if(this.gameData.bonusRound){
 				 $("#content").hide();
 			}
 			this.intervalTime = setInterval(function(){
 			if (triviaGame.gameData.running){
-				//$("#content").show();
 				timer--;
 				$("#timeRemaining").text(timer);
 				$("#time").val(timer);
 				if (timer === 0) {
-					timer = 16;
+					timer = 15;
 					$("#time").removeClass("btn-primary");
 					$("#time").addClass("btn-danger");
 					$(".multipleChoice,.btn-success,.btn-danger").prop("disabled",true);
@@ -455,7 +403,7 @@ var triviaGame = {
 					$("#time").removeClass("btn-danger");
 				}
 			}
-			},1000)
+			},1000);
 		}
 		else{
 			this.endGame();
@@ -463,7 +411,7 @@ var triviaGame = {
 		
 	},
 	selectedAnswer: function(obj){
-		var buttonSelected = $("#" + obj.id)		
+		var buttonSelected = $("#" + obj.id);		
 		if (buttonSelected.val() === this.tweetBank[x].correctAnswer){
 			triviaGame.stop();
 			buttonSelected.removeClass("multipleChoice");
@@ -497,7 +445,7 @@ var triviaGame = {
 		$("#volumeOn").show();
 		$("#volumeOff").hide();
 		triviaGame.volume = false;
-		$('audio').each(function(){
+		$("audio").each(function(){
 			this.pause();
 			this.currentTime = 0;
 		}); 
@@ -532,19 +480,25 @@ var triviaGame = {
 			heartCount++;
 			if (heartCount > 9){
 				$("#heart p").css({
-					'right':'43%',
-					'left': 'auto'
-				})
+					"right":"43%",
+					"left": "auto"
+				});
 			}
 			$("#heart").html("<p>" + heartCount + "</p>");
 			$("#heart").animate({
 				backgroundPosition: "left"
-			})
+			});
 			if(idName.match("trump") !== null){
 				$("#bonusProfileLogo").attr("style","background-image:url(assets/images/donald-trump-profile.jpg);background-size:cover");
+				$("#bonusHandle").text("@realDonaldTrump");
+				$("#bonusTweet a").attr("href","https://twitter.com/realDonaldTrump");
+				$("#bonusHandle").show();
 			}
 			else{
 				$("#bonusProfileLogo").attr("style","background-image:url(assets/images/kanye-west-profile.jpeg);background-size:cover");
+				$("#bonusHandle").text("@realKanyeWest");
+				$("#bonusTweet a").attr("href","#");
+				$("#bonusHandle").show();
 			}
 		}
 		else{
@@ -553,24 +507,31 @@ var triviaGame = {
 			}
 			if(idName.match("trump") !== null){
 				$("#bonusProfileLogo").attr("style","background-image:url(assets/images/kanye-west-profile.jpeg);background-size:cover");
+				$("#bonusHandle").text("@realKanyeWest");
+				$("#bonusTweet a").attr("href","#");
+				$("#bonusHandle").show();
 			}
 			else{
 				$("#bonusProfileLogo").attr("style","background-image:url(assets/images/donald-trump-profile.jpg);background-size:cover");
+				$("#bonusHandle").text("@realDonaldTrump");
+				$("#bonusTweet a").attr("href","https://twitter.com/realDonaldTrump");
+				$("#bonusHandle").show();
 			}			
 		}
 		setTimeout(function(){	
-			if (bonusCount < 12){
-				$("#bonus,#bonusTweet").fadeOut("slow");
-				setTimeout(function(){	
+			if (bonusCount < 2){
+				$("#bonus,#bonusTweetText,#bonusHandle,#bonusProfileLogo,#bonusTime,#bonusTimeRemaining,#bonusTweet").fadeOut("slow");
+				setTimeout(function(){
+					$("#bonusHandle").text("");	
+					$("#bonus,#bonusTweetText,#bonusHandle,#bonusProfileLogo,#bonusTime,#bonusTimeRemaining,#bonusTweet").fadeIn("slow");
 					triviaGame.bonustweet();
 				}, 1000);
-				$("#bonus,#bonusTweet").fadeIn("slow");
 				$("#trumpButton").prop("disabled",false);
 				$("#kanyeButton").prop("disabled",false);
 			}
 			else{
 				$("#bonus").hide();
-				var addNumber = triviaGame.gameData.wins
+				var addNumber = triviaGame.gameData.wins;
 				triviaGame.gameData.losses = triviaGame.gameData.losses + (12 - heartCount);
 				triviaGame.gameData.wins = triviaGame.gameData.wins + heartCount;
 				triviaGame.gameData.bonusRound = false;
@@ -578,22 +539,30 @@ var triviaGame = {
 				$("#heart").hide();
 				$("#bonusRoundTitle").hide();
 				$("#bonusRound").hide();
-				$("#content").show();
-				$('audio').each(function(){
+				//$("#content").show();
+				$("audio").each(function(){
 					this.pause();
 					this.currentTime = 0;
 				}); 
 				$("#twitterSong").get(0).play();
-				triviaGame.run();
-				// }
+				
+				$("#bonusGif").show();
+				setTimeout(function(){
+					$("#bonusGif").hide();
+					$("#content").show();
+					timer = 15;
+					triviaGame.stop();
+					$("#timeRemaining").text(15);	
+					triviaGame.run();
+				}, 2000);
 			}
-		}, 2000);
+		}, 3000);
 	},
 	bonustweet: function(){
 		$("#bonusProfileLogo").attr("style","background-image:url(assets/images/twitter-icon.png);background-size:cover");
 		var y = Math.floor(Math.random() * bonusTweets.length);
-		$("#bonustweet").text(bonusTweets[y].tweet);
-		var determineValue = bonusTweets[y].correctAnswer
+		$("#bonusTweetText").text(bonusTweets[y].tweet);
+		var determineValue = bonusTweets[y].correctAnswer;
 		if(determineValue === "Donald Trump"){
 			$("#trumpButton").attr("data-value","correct");
 			$("#kanyeButton").attr("data-value","incorrect");
@@ -605,8 +574,6 @@ var triviaGame = {
 		bonusTweets.splice([y],1);
 	},
 	bonusRound: function(){
-		if(bonusComplete === false)
-		{
 		$("#twitterSong").get(0).pause();
 		if(this.volume === true){
 			var delayAudio = 0;
@@ -636,13 +603,14 @@ var triviaGame = {
 				$("#money").get(0).play();
 			}
 		}
-		$("#kanyeVoice,#bonusCrown,#content,#gameMessage").hide();
+		$("#kanyeVoice,#bonusCrown,#content,#bonusTweet").hide();
+		$("#gameMessage").addClass("invisible");
 		$("#bonusRoundTitle").show();
 		var length = bonusTweets.length;
 		$("#heart").appendTo($("#animations"));
 		for (var i = 0; i < 100; i++) {
 			var newId = "animation"+ i;
-			$("#heart").clone().attr('style','right: ' + 13*i + 'px').attr('id',newId).appendTo($("#animations"));
+			$("#heart").clone().attr("style","right: " + 13*i + "px").attr("id",newId).appendTo($("#animations"));
 		}
 		$("#heart").appendTo($("#bonusRoundTitle"));
 		$("#animations,#bonusRound").show();
@@ -654,23 +622,23 @@ var triviaGame = {
 			var delayTime = Math.floor(Math.random()*1000);
 			(a).delay(delayTime);
 			$("#animation" + i).animate({
-				top: '-=1000',
+				top: "-=1000",
 			  },
 			  3000);	
 			 setTimeout(function(){
 				$("#animations").hide();
 				$("#bonus").show();
-				$("#bonusTweet").show();	
-			 }, 2000);			 
+				$("#bonusTweet").show();
+				$("#bonusTweetText").show();
+			 }, 3000);			 
 		}
 		this.bonustweet();
 		this.gameData.bonusRound = true;
-		this.endGame();	
 		bonusComplete = true;
 		this.gameData.running = false;
-		}
 	},
 	reset: function() {
+		bonusComplete = false;
 		document.getElementById("twitterSong").currentTime = 48;
 		$("#twitterSong").get(0).play(); 
 		$("#start,#results").hide();

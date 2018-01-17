@@ -30,10 +30,9 @@
                         <br /><br />
                         <img id="gifURL" class="mx-auto d-block rounded img-fluid">
                     </div>
-                    <div id="gameMessage" class="text-center text-light"></div>
-                    
+                    <div id="gameMessage" class="text-center text-light invisible"><h4>Correct!</h4></div>
                     <div id="content" class="mx-auto mt-2"><br />
-                        <blockquote class="twitter-tweet mx-auto text-right pt-5">
+                        <blockquote class="twitter-tweet mx-auto text-right">
                             <header class="text-left">
                                 <img id="bonusCrown" src="assets/images/bonus-crown.png" class="text-left" onclick="triviaGame.bonusRound()" /> 
                                 <a id="link"><div id="profileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left"></div></a>
@@ -46,19 +45,21 @@
                             </header><br />
                             <p class="text-left" id="tweet"></p>
                         </blockquote>
-                        <div class="text-center text-light" id="gameMessage2"></div>
                         <div class="text-center buttons">
                             <button id="selection1" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection2" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection3" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                             <button id="selection4" type="button" class="btn btn-sm multipleChoice d-inline-block m-2" onclick="triviaGame.selectedAnswer(this)"></button>
                         </div>
+                        <div class="text-center text-light" id="gameMessage2"></div>
                     </div>
-
                     <div id="results" class="mx-auto text-center text-light">
                         <h1>GAME OVER</h1>
                         <h2 id="wins"></h2>
                         <h2 id="losses"></h2>
+                    </div>
+                    <div id="bonusGif">
+                        <img  src="assets/images/giphy.gif" class="mx-auto d-block rounded img-fluid">
                     </div>
                     <div id="bonusRound" class="mx-auto mt-3 text-center">
                         <div id="bonusRoundTitle" class="mx-auto text-center text-light">
@@ -75,8 +76,8 @@
                         </div>
                         <blockquote id="bonusTweet" style="display:inline-block" class="twitter-tweet">
                             <header class="text-left">
-                                <div id="bonusProfileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left bonusProfileLogo"></div>
-                                <h6 id="bonusHandle" class="twitterHandle mx-auto pl-2 mb-2 mt-1 d-inline text-left"></h6>
+                                <a target="blank"><div id="bonusProfileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left bonusProfileLogo"></div>
+                                <h6 id="bonusHandle" class="twitterHandle mx-auto pl-2 mb-2 mt-1 d-inline text-left"></h6></a>
                                 <div class="text-right">
                                     <button id="bonusTime" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
                                         <span id="bonusTimeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
@@ -84,7 +85,7 @@
                                 </div>
                             </header>
                         <br />
-                        <p class="text-left" id="bonustweet"></p>
+                        <p class="text-left" id="bonusTweetText"></p>
                         </blockquote>
                     </div>
                     <div id="sounds">
