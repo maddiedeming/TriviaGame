@@ -1,6 +1,6 @@
 body {
     background-color: #2A3947;
-    color: #2A3947;
+    color: white;
 }
 header {
     position:relative;
@@ -51,10 +51,11 @@ blockquote {
     font: 16px/1.4 "Segoe UI",Arial,sans-serif;
 }
 .twitter-tweet a {
-    color: #2b7bb9;
+    color: #0069d9;
+    font-weight: bold;
 }
 .twitter-tweet a:visited {
-    color: #2b7bb9;
+    color: #0069d9;
 }
 @keyframes blinker {
     from {opacity: 1;}
@@ -89,8 +90,8 @@ a {
     height:47.5px;
     width:55.5px;
     position:absolute;
-    top:-70%;
-    left:-3.5%;
+    top:-30%;
+    left:-3%;
     z-index:1;
 }
 #bonusCrown:hover{
@@ -219,8 +220,8 @@ a {
     }
     #bonusCrown{
         /* position:absolute; */
-        top:-30%;
-        left:-5%;
+        /* top:-30%; */
+        /* left:-5%; */
         /* z-index:1; */
         animation-name: crownHover;
         animation-duration: 1s;
@@ -259,7 +260,7 @@ a {
         background-color:#0275d8;
     }
     #bonusCrown{
-        left: -3%;
+        /* left: -3%; */
         /* left:-3.5%; */
         animation-name: crownHover;
         animation-duration: 1s;
@@ -293,9 +294,9 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
-    #bonusCrown {
+    /* #bonusCrown {
         left: -5%;
-    }
+    } */
     #bonusCrown:hover {
         animation-name: crownHover;
         animation-duration: 1s;

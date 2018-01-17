@@ -301,7 +301,7 @@ var triviaGame = {
 			this.tweetBank[x].answers.splice([selectionNumber],1);
 		}
 	},
-	showMessage: function() {
+	showMessage: function(){
 		$("#gameMessage,#gameMessage2").empty();
 		$("#gameMessage").removeClass("invisible");
 		$("#gameMessage2").show();
@@ -317,11 +317,11 @@ var triviaGame = {
 			$("#gameMessage").html("<h4>Correct!</h4>");
 			if($(".btn-success").val() === "Kanye West" && bonusComplete === false || $(".btn-success").val() === "Donald Trump"  && bonusComplete === false){
 				$("#bonusCrown").show();
-				$("#content blockquote").addClass("pt-5");
+				//$("#content blockquote").addClass("pt-5");
 			}
 			else{
 				$("#bonusCrown").hide();
-				$("#content blockquote").removeClass("pt-5");
+				//$("#content blockquote").removeClass("pt-5");
 			}
 		}
 		else if(this.gameData.game === "lose"){
@@ -339,7 +339,7 @@ var triviaGame = {
 			}
 		}
 	},
-	showGIF: function() {
+	showGIF: function(){
 		//$("#bonusCrown,#gameMessage,#gameMessage2,#content").hide();
 		$("#bonusCrown,#content,#gameMessage2").hide();
 		$("#gameMessage").addClass("invisible");
@@ -544,6 +544,7 @@ var triviaGame = {
 					this.pause();
 					this.currentTime = 0;
 				}); 
+				document.getElementById("twitterSong").currentTime = 48;
 				$("#twitterSong").get(0).play();
 				
 				$("#bonusGif").show();
@@ -637,7 +638,7 @@ var triviaGame = {
 		bonusComplete = true;
 		this.gameData.running = false;
 	},
-	reset: function() {
+	reset: function(){
 		bonusComplete = false;
 		document.getElementById("twitterSong").currentTime = 48;
 		$("#twitterSong").get(0).play(); 
