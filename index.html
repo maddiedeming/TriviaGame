@@ -21,8 +21,8 @@
                 <div class="col-lg-8 col-md-8">
                     <header class="mx-auto text-center mt-3 pt-2">
                         <img id="logo" src="assets/images/twitter-logo.png"/>
-                        <i id="volumeOff" class="fa fa-volume-off text-light" onclick="triviaGame.volumeOff()"></i>
-                        <i id="volumeOn" class="fa fa-volume-up text-light" onclick="triviaGame.volumeOn()"></i>
+                            <i id="volumeOff" class="fa fa-volume-off text-light" onclick="triviaGame.volumeOff()"></i>
+                            <i id="volumeOn" class="fa fa-volume-up text-light" onclick="triviaGame.volumeOn()"></i>
                         <br/>
                         <button id="start" class="btn btn-lg mx-auto bg-primary text-light mt-3 blink" onclick="triviaGame.reset()">Start</button>
                     </header>
@@ -64,9 +64,9 @@
                     <div id="bonusRound" class="mx-auto mt-3 text-center">
                         <div id="bonusRoundTitle" class="mx-auto text-center text-light">
                             <h3>BONUS ROUND</h3>
-                            <h6>TRUMP OR KANYE?</h6>
+                            <h6>TRUMP OR KANYE?</h6><br />
                         </div>
-                        <div id="bonus" style="position:relative;">
+                        <div id="bonus" class="mx-auto" style="position:relative;width:500px;height:100px;">
                             <div id="bonusTrump">
                                 <button id="trumpButton" class="trumpButton btn" onclick="triviaGame.bonusClick(this)"></button>
                             </div>
@@ -78,13 +78,13 @@
                             <header class="text-left">
                                 <a target="blank"><div id="bonusProfileLogo" class="mb-2 mt-1 d-inline rounded-circle text-left bonusProfileLogo"></div>
                                 <h6 id="bonusHandle" class="twitterHandle mx-auto pl-2 mb-2 mt-1 d-inline text-left"></h6></a>
-                                <div class="text-right">
+                                <!-- <div class="text-right">
                                     <button id="bonusTime" type="button" class="btn btn-sm btn-primary ml-4 mb-2 mt-1 d-inline">Time: 
                                         <span id="bonusTimeRemaining" class="badge badge-light ml-4 mb-2 mt-1 d-inline">15</span>
                                     </button>
-                                </div>
+                                </div> -->
                             </header>
-                        <br />
+                        <br /><br /><br />
                         <p class="text-left" id="bonusTweetText"></p>
                         </blockquote>
                     </div>
@@ -117,7 +117,7 @@
         </div>
 
         <div id="animations">
-            <div id="heart" class="animation heart d-inline-block m-1"></div>
+            <div id="heart" class="animation heart d-block mx-auto"></div>
         </div>
     <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>

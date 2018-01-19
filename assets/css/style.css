@@ -11,10 +11,6 @@ header {
 }
 #volumeOn,#volumeOff  {
     position:absolute;
-    right:-5%;
-    top:-5%;
-    height:20%;
-    width:20%;
     opacity: 0.5;
 }
 #gifURL {
@@ -73,7 +69,6 @@ blockquote {
     100% {opacity: 1;}
   }
 .multipleChoice {
-    /* color:#0275d8; */
     background-color:#b8e6ed;
 }
 a {
@@ -115,47 +110,37 @@ a {
     height:40px;
     width:40px;
     position:relative;
-    /* background-image:url('../images/twitter-icon.png');
-    background-size:cover; */
     float:left;
 }
 #bonusTrump{
     position:absolute;
     z-index:1;
-    left:5%;
+    left:25%;
     bottom:25%
 }
 #bonusKanye{
     position:absolute;
     z-index:1;
-    right:5%;
+    right:25%;
     bottom:25%
 }
 .trumpButton{
     background-color: #2a3947;
-    /* height:50px;
-    width:50px; */
     height: 100px;
     width: 100px;
-    /* position:relative; */
     background-image:url('../images/donald-head.png');
     background-size:contain;  
     background-repeat: no-repeat;
     background-position: center;
-    /* float:left; */
 }
 .kanyeButton{
     background-color: #2a3947;
-    /* height:50px;
-    width:50px; */
     height: 100px;
     width: 100px;
-    /* position:relative; */
     background-image:url('../images/kanye-head.png');
     background-size:contain;  
     background-repeat: no-repeat;
     background-position: center;
-    /* float:right; */
 }
 .twitterHandle {
     float:left;
@@ -209,15 +194,15 @@ a {
 
 /* Extra small devices */
 @media (max-width: 575px) { 
+    #volumeOn,#volumeOff  {
+        font-size: 1.5em;
+    }
     .multipleChoice {
         color:#ffffff;
         background-color:#0275d8;
     }
     #bonusCrown{
-        /* position:absolute; */
-        /* top:-30%; */
         left:-6%;
-        /* z-index:1; */
         animation-name: crownHover;
         animation-duration: 1s;
         animation-iteration-count:infinite;
@@ -250,32 +235,24 @@ a {
 
 /* Small devices */
 @media (max-width: 767px) and (min-width: 576px) { 
+    #volumeOn,#volumeOff  {
+        font-size: 2em;
+    }
     .multipleChoice {
         color:#ffffff;
         background-color:#0275d8;
     }
     #bonusCrown{
-        /* left: -3%; */
-        /* left:-3.5%; */
         animation-name: crownHover;
         animation-duration: 1s;
         animation-iteration-count:infinite;
     }
-    #bonusTrump{
-        position:absolute;
-        z-index:1;
-        left:5%;
-        bottom:25%
-    }
-    #bonusKanye{
-        position:absolute;
-        z-index:1;
-        right:5%;
-        bottom:25%
-    }
 }
 /* Medium devices */
 @media (max-width: 991px) and (min-width: 768px) { 
+    #volumeOn,#volumeOff  {
+        font-size: 2em;
+    }
     .blink:hover {
         text-decoration: blink;
         animation-name: blinkerHover;
@@ -289,36 +266,18 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
-    /* #bonusCrown {
-        left: -5%;
-    } */
     #bonusCrown:hover {
         animation-name: crownHover;
         animation-duration: 1s;
         animation-iteration-count:infinite;
     }
-    .trumpButton:hover{
-        transform: rotate(-15deg);
-    }
-    .kanyeButton:hover{
-        transform: rotate(15deg);
-    }
-    #bonusTrump {
-        position:absolute;
-        z-index:1;
-        left:5%;
-        bottom:25%;
-    }
-    #bonusKanye {
-        position:absolute;
-        z-index:1;
-        right:5%;
-        bottom:25%
-    }
  }
 
 /* Large devices */
 @media (min-width: 992px) { 
+    #volumeOn,#volumeOff  {
+        font-size: 3em;
+    }
     .blink:hover{
         text-decoration: blink;
         animation-name: blinkerHover;
@@ -331,12 +290,6 @@ a {
     .multipleChoice:hover {
         color:#ffffff;
         background-color:#0275d8;
-    }
-    .trumpButton:hover{
-        transform: rotate(-15deg);
-    }
-    .kanyeButton:hover{
-        transform: rotate(15deg);
     }
     .trumpButton,.kanyeButton {
         position: relative;
