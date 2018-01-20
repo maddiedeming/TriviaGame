@@ -10,150 +10,150 @@ var bonusComplete = false;
 $("#content,#time,#gifURL,#results,#volumeOn,#bonusCrown,#bonusRoundTitle,#animations,#bonusRound,#sounds,#bonus,#bonusTweet,#bonusTweetText,#gameMessage2,#bonusGif").hide();
 //Tweet Data
 var tweetBank = [
-	// {
-	// 	tweet: "Do ants have dicks?",
-	// 	answers: ["Kourtney Kardashian","Paris Hilton","Tara Reid","Sarah Palin"],
-	// 	correctAnswer: "Kourtney Kardashian",
-	// 	src: "https://twitter.com/kourtneykardash/status/11175751424",
-	// 	profileImg: "assets/images/kourtney-kardashian-profile.jpg",
-	// 	twitterHandle: "@kourtneykardash"
-	// },
-	// {
-	// 	tweet: "How Can Mirrors Be Real If Our Eyes Aren't Real",
-	// 	answers: ["Jaden Smith","Jim Carrey","Jessica Simpson","Nicki Minaj"],
-	// 	correctAnswer: "Jaden Smith",
-	// 	src: "https://twitter.com/officialjaden/status/329768040235413504",
-	// 	profileImg: "assets/images/jaden-smith-profile.jpg",
-	// 	twitterHandle: "@officialjaden"
-	// },
-	// {
-	// 	tweet: "I was looking at tweets & saw that i really hurt someones feelings ! Im sorry. It was light blue background with white egg shape . Bye",
-	// 	answers: ["Cher","Jamie Lee Curtis","Betty White","Jennifer Aniston"],
-	// 	correctAnswer: "Cher",
-	// 	src: "https://twitter.com/cher/status/194552615672102912",
-	// 	profileImg: "assets/images/cher-profile.jpg",
-	// 	twitterHandle: "@cher"
-	// },
-	// {
-	// 	tweet: "i am still alive",
-	// 	answers: ["John Cleese","Doris Day","Julie Andrews","Mel Brooks"],
-	// 	correctAnswer: "John Cleese",
-	// 	src: "https://twitter.com/JohnCleese/status/465372192",
-	// 	profileImg: "assets/images/john-cleese-profile.jpeg",
-	// 	twitterHandle: "@JohnCleese"
-	// },
-	// {
-	// 	tweet: "well i am going to bed because snoop noticed a tweet of mine where i only used one g in dogg and i'm mortified",
-	// 	answers: ["Chrissy Teigen","Martha Stewart","David Beckham","Wiz Khalifa"],
-	// 	correctAnswer: "Chrissy Teigen",
-	// 	src: "https://twitter.com/chrissyteigen/status/530943469389635585",
-	// 	profileImg: "assets/images/chrissy-teigen-profile.jpg",
-	// 	twitterHandle: "@chrissyteigen"
-	// },
-	// {
-	// 	tweet: "I don't know about you, but I'm feeling 22.",
-	// 	answers: ["Harry Styles","Taylor Swift","Katy Perry","John Mayer"],
-	// 	correctAnswer: "Harry Styles",
-	// 	src: "https://twitter.com/Harry_Styles/status/694229236677120000",
-	// 	profileImg: "assets/images/harry-styles-profile.jpg",
-	// 	twitterHandle: "@Harry_Styles"
-	// },
-	// {
-	// 	tweet: "YO @BARACKOBAMA COME OVERRRRRR",
-	// 	answers: ["Aubrey Plaza","Chelsea Handler","Amy Schumer","Amy Poehler"],
-	// 	correctAnswer: "Aubrey Plaza",
-	// 	src: "https://twitter.com/evilhag/status/11852331945",
-	// 	profileImg: "assets/images/aubrey-plaza-profile.jpg",
-	// 	twitterHandle: "@evilhag"
-	// },
-	// {
-	// 	tweet: "Why is rhode island nor a road or an island",
-	// 	answers: ["Justin Bieber","Jaden Smith","Seth Rogen","Jim Carrey"],
-	// 	correctAnswer: "Justin Bieber",
-	// 	src: "https://twitter.com/justinbieber/status/6350337695",
-	// 	profileImg: "assets/images/justin-bieber-profile.jpg",
-	// 	twitterHandle: "@justinbieber"
-	// },
-	// {
-	// 	tweet: "Does anyone think global warming is a good thing? I love Lady Gaga. I think she's a really interesting artist.",
-	// 	answers: ["Britney Spears","Jessica Simpson","Heidi Montag","Tila Tequila"],
-	// 	correctAnswer: "Britney Spears",
-	// 	src: "https://twitter.com/britneyspears/status/35767743634481152",
-	// 	profileImg: "assets/images/britney-spears-profile.jpg",
-	// 	twitterHandle: "@britneyspears"
-	// },
-	// {
-	// 	tweet: "Do you think I'm hip?",
-	// 	answers: ["Martha Stewart","Betty White","Cher","Bette Midler"],
-	// 	correctAnswer: "Martha Stewart",
-	// 	src: "https://twitter.com/MarthaStewart/status/103943420409683968",
-	// 	profileImg: "assets/images/martha-stewart-profile.jpeg",
-	// 	twitterHandle: "@MarthaStewart"
-	// },
-	// {
-	// 	tweet: "kowabunga dudettes. i'm so pumped to be on this surfing kick. who else surfs out there? gnarly day in the h2o. ridin waves!",
-	// 	answers: ["Kim Kardashian","Rihanna","Emma Stone","Lindsay Lohan"],
-	// 	correctAnswer: "Kim Kardashian",
-	// 	src: "https://twitter.com/KimKardashian/status/22396212024",
-	// 	profileImg: "assets/images/kim-kardashian-profile.jpg",
-	// 	twitterHandle: "@KimKardashian"
-	// },
-	// {
-	// 	tweet: "I feel like there's a giant meatloaf inside of me",
-	// 	answers: ["Kris Jenner","Michael Lee Aday","Will Ferrell","Sarah Silverman"],
-	// 	correctAnswer: "Kris Jenner",
-	// 	src: "https://twitter.com/KrisJenner/status/243812456558903296",
-	// 	profileImg: "assets/images/kris-jenner-profile.jpg",
-	// 	twitterHandle: "@KrisJenner"
-	// },
-	// {
-	// 	tweet: "First tweet of My life",
-	// 	answers: ["Hulk Hogan","Cher","Barack Obama","George W. Bush"],
-	// 	correctAnswer: "Hulk Hogan",
-	// 	src: "https://twitter.com/HulkHogan/status/21587600569",
-	// 	profileImg: "assets/images/hulk-hogan-profile.jpg",
-	// 	twitterHandle: "@HulkHogan"
-	// },
-	// {
-	// 	tweet: "@tpa@y#m##@nyhn",
-	// 	answers: ["Oprah Winfrey","Melinda Gates","Ruth Bader Ginsburg","Hillary Clinton"],
-	// 	correctAnswer: "Oprah Winfrey",
-	// 	src: "https://twitter.com/Oprah/status/447783529997271040",
-	// 	profileImg: "assets/images/oprah-profile.jpg",
-	// 	twitterHandle: "@Oprah"
-	// },
-	// {
-	// 	tweet: "Hey friends, I lost my blackberry. 😢 So if your trying to reach me, then text me on one of my three iPhones. 💋",
-	// 	answers: ["Paris Hilton","Nicole Richie","Kim Kardashian","Lauren Conrad"],
-	// 	correctAnswer: "Paris Hilton",
-	// 	src: "https://twitter.com/ParisHilton/status/449707907769438209",
-	// 	profileImg: "assets/images/paris-hilton-profile.jpg",
-	// 	twitterHandle: "@ParisHilton"
-	// },	
-	// {
-	// 	tweet: "I AM NOT FAMOUS ANYMORE",
-	// 	answers: ["Shia LaBeouf","James Franco","Jim Carrey","Sacha Baron Cohen"],
-	// 	correctAnswer: "Shia LaBeouf",
-	// 	src: "https://twitter.com/thecampaignbook/status/422731823811395584",
-	// 	profileImg: "assets/images/shia-lebeouf-profile.png",
-	// 	twitterHandle: "@thecampaignbook"
-	// },
-	// {
-	// 	tweet: "Ice Loves Coco is so romantic :)",
-	// 	answers: ["Miley Cyrus","Selena Gomez","Demi Lovato","Brenda Song"],
-	// 	correctAnswer: "Miley Cyrus",
-	// 	src: "https://twitter.com/MileyCyrus/status/186126055499771904",
-	// 	profileImg: "assets/images/miley-cyrus-profile.jpg",
-	// 	twitterHandle: "@MileyCyrus"
-	// },
-	// {
-	// 	tweet: "Flight attendant on American reamed me out 4 playing WORDS W FRIENDS while we sat at the gate, not moving. #nowonderamericaairisbankrupt",
-	// 	answers: ["Alec Baldwin","Christian Slater","Billie Joe Armstrong","Amanda Bynes"],
-	// 	correctAnswer: "Alec Baldwin",
-	// 	src: "https://twitter.com/ABFalecbaldwin/status/144174648920260608",
-	// 	profileImg: "assets/images/alec-baldwin-profile.jpeg",
-	// 	twitterHandle: "@ABFalecbaldwin"
-	// },
+	{
+		tweet: "Do ants have dicks?",
+		answers: ["Kourtney Kardashian","Paris Hilton","Tara Reid","Sarah Palin"],
+		correctAnswer: "Kourtney Kardashian",
+		src: "https://twitter.com/kourtneykardash/status/11175751424",
+		profileImg: "assets/images/kourtney-kardashian-profile.jpg",
+		twitterHandle: "@kourtneykardash"
+	},
+	{
+		tweet: "How Can Mirrors Be Real If Our Eyes Aren't Real",
+		answers: ["Jaden Smith","Jim Carrey","Jessica Simpson","Nicki Minaj"],
+		correctAnswer: "Jaden Smith",
+		src: "https://twitter.com/officialjaden/status/329768040235413504",
+		profileImg: "assets/images/jaden-smith-profile.jpg",
+		twitterHandle: "@officialjaden"
+	},
+	{
+		tweet: "I was looking at tweets & saw that i really hurt someones feelings ! Im sorry. It was light blue background with white egg shape . Bye",
+		answers: ["Cher","Jamie Lee Curtis","Betty White","Jennifer Aniston"],
+		correctAnswer: "Cher",
+		src: "https://twitter.com/cher/status/194552615672102912",
+		profileImg: "assets/images/cher-profile.jpg",
+		twitterHandle: "@cher"
+	},
+	{
+		tweet: "i am still alive",
+		answers: ["John Cleese","Doris Day","Julie Andrews","Mel Brooks"],
+		correctAnswer: "John Cleese",
+		src: "https://twitter.com/JohnCleese/status/465372192",
+		profileImg: "assets/images/john-cleese-profile.jpeg",
+		twitterHandle: "@JohnCleese"
+	},
+	{
+		tweet: "well i am going to bed because snoop noticed a tweet of mine where i only used one g in dogg and i'm mortified",
+		answers: ["Chrissy Teigen","Martha Stewart","David Beckham","Wiz Khalifa"],
+		correctAnswer: "Chrissy Teigen",
+		src: "https://twitter.com/chrissyteigen/status/530943469389635585",
+		profileImg: "assets/images/chrissy-teigen-profile.jpg",
+		twitterHandle: "@chrissyteigen"
+	},
+	{
+		tweet: "I don't know about you, but I'm feeling 22.",
+		answers: ["Harry Styles","Taylor Swift","Katy Perry","John Mayer"],
+		correctAnswer: "Harry Styles",
+		src: "https://twitter.com/Harry_Styles/status/694229236677120000",
+		profileImg: "assets/images/harry-styles-profile.jpg",
+		twitterHandle: "@Harry_Styles"
+	},
+	{
+		tweet: "YO @BARACKOBAMA COME OVERRRRRR",
+		answers: ["Aubrey Plaza","Chelsea Handler","Amy Schumer","Amy Poehler"],
+		correctAnswer: "Aubrey Plaza",
+		src: "https://twitter.com/evilhag/status/11852331945",
+		profileImg: "assets/images/aubrey-plaza-profile.jpg",
+		twitterHandle: "@evilhag"
+	},
+	{
+		tweet: "Why is rhode island nor a road or an island",
+		answers: ["Justin Bieber","Jaden Smith","Seth Rogen","Jim Carrey"],
+		correctAnswer: "Justin Bieber",
+		src: "https://twitter.com/justinbieber/status/6350337695",
+		profileImg: "assets/images/justin-bieber-profile.jpg",
+		twitterHandle: "@justinbieber"
+	},
+	{
+		tweet: "Does anyone think global warming is a good thing? I love Lady Gaga. I think she's a really interesting artist.",
+		answers: ["Britney Spears","Jessica Simpson","Heidi Montag","Tila Tequila"],
+		correctAnswer: "Britney Spears",
+		src: "https://twitter.com/britneyspears/status/35767743634481152",
+		profileImg: "assets/images/britney-spears-profile.jpg",
+		twitterHandle: "@britneyspears"
+	},
+	{
+		tweet: "Do you think I'm hip?",
+		answers: ["Martha Stewart","Betty White","Cher","Bette Midler"],
+		correctAnswer: "Martha Stewart",
+		src: "https://twitter.com/MarthaStewart/status/103943420409683968",
+		profileImg: "assets/images/martha-stewart-profile.jpeg",
+		twitterHandle: "@MarthaStewart"
+	},
+	{
+		tweet: "kowabunga dudettes. i'm so pumped to be on this surfing kick. who else surfs out there? gnarly day in the h2o. ridin waves!",
+		answers: ["Kim Kardashian","Rihanna","Emma Stone","Lindsay Lohan"],
+		correctAnswer: "Kim Kardashian",
+		src: "https://twitter.com/KimKardashian/status/22396212024",
+		profileImg: "assets/images/kim-kardashian-profile.jpg",
+		twitterHandle: "@KimKardashian"
+	},
+	{
+		tweet: "I feel like there's a giant meatloaf inside of me",
+		answers: ["Kris Jenner","Michael Lee Aday","Will Ferrell","Sarah Silverman"],
+		correctAnswer: "Kris Jenner",
+		src: "https://twitter.com/KrisJenner/status/243812456558903296",
+		profileImg: "assets/images/kris-jenner-profile.jpg",
+		twitterHandle: "@KrisJenner"
+	},
+	{
+		tweet: "First tweet of My life",
+		answers: ["Hulk Hogan","Cher","Barack Obama","George W. Bush"],
+		correctAnswer: "Hulk Hogan",
+		src: "https://twitter.com/HulkHogan/status/21587600569",
+		profileImg: "assets/images/hulk-hogan-profile.jpg",
+		twitterHandle: "@HulkHogan"
+	},
+	{
+		tweet: "@tpa@y#m##@nyhn",
+		answers: ["Oprah Winfrey","Melinda Gates","Ruth Bader Ginsburg","Hillary Clinton"],
+		correctAnswer: "Oprah Winfrey",
+		src: "https://twitter.com/Oprah/status/447783529997271040",
+		profileImg: "assets/images/oprah-profile.jpg",
+		twitterHandle: "@Oprah"
+	},
+	{
+		tweet: "Hey friends, I lost my blackberry. 😢 So if your trying to reach me, then text me on one of my three iPhones. 💋",
+		answers: ["Paris Hilton","Nicole Richie","Kim Kardashian","Lauren Conrad"],
+		correctAnswer: "Paris Hilton",
+		src: "https://twitter.com/ParisHilton/status/449707907769438209",
+		profileImg: "assets/images/paris-hilton-profile.jpg",
+		twitterHandle: "@ParisHilton"
+	},	
+	{
+		tweet: "I AM NOT FAMOUS ANYMORE",
+		answers: ["Shia LaBeouf","James Franco","Jim Carrey","Sacha Baron Cohen"],
+		correctAnswer: "Shia LaBeouf",
+		src: "https://twitter.com/thecampaignbook/status/422731823811395584",
+		profileImg: "assets/images/shia-lebeouf-profile.png",
+		twitterHandle: "@thecampaignbook"
+	},
+	{
+		tweet: "Ice Loves Coco is so romantic :)",
+		answers: ["Miley Cyrus","Selena Gomez","Demi Lovato","Brenda Song"],
+		correctAnswer: "Miley Cyrus",
+		src: "https://twitter.com/MileyCyrus/status/186126055499771904",
+		profileImg: "assets/images/miley-cyrus-profile.jpg",
+		twitterHandle: "@MileyCyrus"
+	},
+	{
+		tweet: "Flight attendant on American reamed me out 4 playing WORDS W FRIENDS while we sat at the gate, not moving. #nowonderamericaairisbankrupt",
+		answers: ["Alec Baldwin","Christian Slater","Billie Joe Armstrong","Amanda Bynes"],
+		correctAnswer: "Alec Baldwin",
+		src: "https://twitter.com/ABFalecbaldwin/status/144174648920260608",
+		profileImg: "assets/images/alec-baldwin-profile.jpeg",
+		twitterHandle: "@ABFalecbaldwin"
+	},
 	{
 		tweet: "I would like to extend my best wishes to all, even the haters and losers, on this special date, September 11th.",
 		answers: ["Donald Trump","Kanye West","Charlie Sheen","Perez Hilton"],
@@ -173,50 +173,50 @@ var tweetBank = [
 ];
 //Bonus Round Tweet Data
 var bonusTweets = [	
-	// {
-	// 	tweet: "Also for anyone that has money they know the first rule is to use other people's money.",
-	// 	correctAnswer: "Kanye West"
-	// },
-	// {
-	// 	tweet: "I have never seen a thin person drinking Diet Coke.",
-	// 	correctAnswer: "Donald Trump"
-	// },
-	// {
-	// 	tweet: "What is your definition of true freedom? There is no true freedom without economic freedom.",
-	// 	correctAnswer: "Kanye West"
-	// },
-	// {
-	// 	tweet: "Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please don't feel so stupid or insecure,it's not your fault",
-	// 	correctAnswer: "Donald Trump"
-	// },
-	// {
-	// 	tweet: "I especially hate suit jackets on women… that was a groundbreaking idea 5 million years ago!",
-	// 	correctAnswer: "Kanye West"
-	// },
-	// {
-	// 	tweet: "My twitter has become so powerful that I can actually make my enemies tell the truth.",
-	// 	correctAnswer: "Donald Trump"
-	// },
-	// {
-	// 	tweet: "The world needs a guy like me. The world needs somebody to not be scared and tell his truth.",
-	// 	correctAnswer: "Kanye West"
-	// },
-	// {
-	// 	tweet: "Everyone knows I am right that Robert Pattinson should dump Kristen Stewart. In a couple of years, he will thank me. Be smart, Robert.",
-	// 	correctAnswer: "Donald Trump"
-	// },
-	// {
-	// 	tweet: "I guess in a media world where you never hear the truth, the truth can come off as crazy…",
-	// 	correctAnswer: "Kanye West"
-	// },
-	// {
-	// 	tweet: ".@katyperry Katy, what the hell were you thinking when you married loser Russell Brand. There is a guy who has got nothing going, a waste!",
-	// 	correctAnswer: "Donald Trump"
-	// },
-	// {
-	// 	tweet: "I'd like to address the false stories and noise that have been engineered by the media.",
-	// 	correctAnswer: "Kanye West"
-	// },
+	{
+		tweet: "Also for anyone that has money they know the first rule is to use other people's money.",
+		correctAnswer: "Kanye West"
+	},
+	{
+		tweet: "I have never seen a thin person drinking Diet Coke.",
+		correctAnswer: "Donald Trump"
+	},
+	{
+		tweet: "What is your definition of true freedom? There is no true freedom without economic freedom.",
+		correctAnswer: "Kanye West"
+	},
+	{
+		tweet: "Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please don't feel so stupid or insecure,it's not your fault",
+		correctAnswer: "Donald Trump"
+	},
+	{
+		tweet: "I especially hate suit jackets on women… that was a groundbreaking idea 5 million years ago!",
+		correctAnswer: "Kanye West"
+	},
+	{
+		tweet: "My twitter has become so powerful that I can actually make my enemies tell the truth.",
+		correctAnswer: "Donald Trump"
+	},
+	{
+		tweet: "The world needs a guy like me. The world needs somebody to not be scared and tell his truth.",
+		correctAnswer: "Kanye West"
+	},
+	{
+		tweet: "Everyone knows I am right that Robert Pattinson should dump Kristen Stewart. In a couple of years, he will thank me. Be smart, Robert.",
+		correctAnswer: "Donald Trump"
+	},
+	{
+		tweet: "I guess in a media world where you never hear the truth, the truth can come off as crazy…",
+		correctAnswer: "Kanye West"
+	},
+	{
+		tweet: ".@katyperry Katy, what the hell were you thinking when you married loser Russell Brand. There is a guy who has got nothing going, a waste!",
+		correctAnswer: "Donald Trump"
+	},
+	{
+		tweet: "I'd like to address the false stories and noise that have been engineered by the media.",
+		correctAnswer: "Kanye West"
+	},
 	{
 		tweet: "Sorry, there is no STAR on the stage tonight!",
 		correctAnswer: "Donald Trump"
