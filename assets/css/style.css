@@ -98,6 +98,16 @@ a {
 #bonusRound{
     font-size:80%;
 }
+#bonus{
+    position:relative;
+    max-width:500px;
+    height:100px;
+}
+#bonusRoundTitle{
+    position:absolute;
+    left:25%;
+    right:25%
+}
 #profileLogo{
     height:40px;
     width:40px;
@@ -113,16 +123,18 @@ a {
     float:left;
 }
 #bonusTrump{
-    position:absolute;
+    /* position:absolute;
     z-index:1;
     left:25%;
-    bottom:25%
+    bottom:25% */
+    float:left;
 }
 #bonusKanye{
-    position:absolute;
+    /* position:absolute;
     z-index:1;
     right:25%;
-    bottom:25%
+    bottom:25% */
+    float:right;
 }
 .trumpButton{
     background-color: #2a3947;
@@ -132,6 +144,7 @@ a {
     background-size:contain;  
     background-repeat: no-repeat;
     background-position: center;
+    margin-bottom: 10%;
 }
 .kanyeButton{
     background-color: #2a3947;
@@ -141,6 +154,7 @@ a {
     background-size:contain;  
     background-repeat: no-repeat;
     background-position: center;
+    margin-bottom: 10%;
 }
 .twitterHandle {
     float:left;
@@ -208,28 +222,28 @@ a {
         animation-iteration-count:infinite;
     }
     .trumpButton{
-        display: inline-block;
-        float:left;
+        /* display: inline-block;
+        float:left; */
         height: 50px;
         width:50px;
-        animation-name: blinker;
+        /* animation-name: blinker;
         animation-duration: 3s;
         animation-iteration-count:infinite;
         animation-timing-function:ease-in-out;
-        animation-direction: alternate;
-        margin-bottom: 10%;
+        animation-direction: alternate; */
+        /* margin-bottom: 10%; */
     }
     .kanyeButton{
-        display: inline-block;
-        float:right;
+        /* display: inline-block;
+        float:right; */
         height: 50px;
         width:50px;
-        animation-name: blinker;
+        /* animation-name: blinker;
         animation-duration: 3s;
         animation-iteration-count:infinite;
         animation-timing-function:ease-in-out;
-        animation-direction: alternate;
-        margin-bottom: 10%;
+        animation-direction: alternate; */
+        /* margin-bottom: 10%; */
     }
  }
 
@@ -291,7 +305,7 @@ a {
         color:#ffffff;
         background-color:#0275d8;
     }
-    .trumpButton,.kanyeButton {
+    /* .trumpButton,.kanyeButton {
         position: relative;
-    }
+    } */
  }
