@@ -224,6 +224,7 @@ var bonusTweets = [
 ];
 //Trivia Game Object
 var triviaGame = {
+//Holds Game Data
 	gameData: {
 		game: "",
 		wins: 0,
@@ -234,6 +235,7 @@ var triviaGame = {
 	volume: true,
 	intervalTime: 0,
 	tweetBank: [],
+//Disables Music/Sounds
 	volumeOff: function(){
 		$("#volumeOn").show();
 		$("#volumeOff").hide();
@@ -243,6 +245,7 @@ var triviaGame = {
 			this.currentTime = 0;
 		}); 
 	},
+//Plays Music/Sounds
 	volumeOn: function(){
 		$("#volumeOff").show();
 		$("#volumeOn").hide();
@@ -260,6 +263,7 @@ var triviaGame = {
 			}
 		}
 	},
+//Ends the Game and Displays Button to Restart
 	endGame: function(){
 		this.gameData.running = false;
 		timer = 15;
@@ -273,6 +277,7 @@ var triviaGame = {
 			$("#losses").text("Losses: " + this.gameData.losses);
 		}
 	},	
+//Show Correct/Incorrect Display Message
 	showMessage: function(){
 		$("#gameMessage,#gameMessage2").empty();
 		$("#gameMessage").removeClass("invisible");
@@ -308,6 +313,7 @@ var triviaGame = {
 			}
 		}
 	},
+//Display Gif After Selection is Made
 	showGIF: function(){
 		$("#bonusCrown,#content,#gameMessage2").hide();
 		$("#gameMessage").addClass("invisible");
@@ -337,6 +343,7 @@ var triviaGame = {
 		}
 
 	},
+//Call Giphy API to get Current Gif
 	getGif: function(){
 		var regex = /\s/g;
 		var query = "https://api.giphy.com/v1/gifs/random?tag=";
@@ -350,6 +357,7 @@ var triviaGame = {
 			triviaGame.tweetBank[x].gifURL = response.data.image_original_url;
 		});
 	},
+//Select New Tweet to Display
 	setTweet: function(){
 		x = Math.floor(Math.random() * this.tweetBank.length);
 		$("#tweet").text(this.tweetBank[x].tweet);
@@ -365,9 +373,11 @@ var triviaGame = {
 			this.tweetBank[x].answers.splice([selectionNumber],1);
 		}
 	},
+//Stop Timer
 	stop: function(){
 		clearInterval(this.intervalTime);
 	},
+//Starts Game
 	run: function(){
 		timer = 15;
 		this.stop();
@@ -411,6 +421,7 @@ var triviaGame = {
 		}
 		
 	},
+//Determine if selection is correct
 	selectedAnswer: function(obj){
 		var buttonSelected = $("#" + obj.id);
 		if (buttonSelected.val() === this.tweetBank[x].correctAnswer){
@@ -442,6 +453,7 @@ var triviaGame = {
 			}
 		}, 3000);
 	},
+//Reset the tweet that's displayed
 	bonustweet: function(){
 		$("#bonusProfileLogo").attr("style","background-image:url(assets/images/twitter-icon.png);background-size:cover");
 		var y = Math.floor(Math.random() * bonusTweets.length);
@@ -458,6 +470,7 @@ var triviaGame = {
 		bonusTweets.splice([y],1);
 		$("#bonusTime,#bonusTimeRemaining").hide();
 	},
+//Determine if selection is correct (Goes back to normal game when ended)	
 	bonusClick: function(obj){
 		bonusCount++;
 		var idName = obj.id;
@@ -511,7 +524,7 @@ var triviaGame = {
 			}			
 		}
 		setTimeout(function(){	
-			if (bonusCount < 2){
+			if (bonusCount < 12){
 				$("#bonus,#bonusTweetText,#bonusHandle,#bonusProfileLogo,#bonusTime,#bonusTimeRemaining,#bonusTweet").fadeOut("slow");
 				$("#heart").hide();
 				setTimeout(function(){
@@ -554,6 +567,7 @@ var triviaGame = {
 			}
 		}, 3000);
 	},
+//Initiate Bonus Round on Crown Click
 	bonusRound: function(){
 		$("#twitterSong").get(0).pause();
 		if(this.volume === true){
@@ -613,12 +627,6 @@ var triviaGame = {
 				$("#bonusTweetText").show();
 			 }, 3000);			 
 		}
-		// bonusTimer = 30;
-		// setTimeout(function(){
-		// 	bonusTimer--;
-		// 	$("#bonusTimeRemaining").text(bonusTimer);
-		// 	$("#bonusTime").val(bonusTimer);
-		// }, 1000);
 		this.bonustweet();
 		this.gameData.bonusRound = true;
 		bonusComplete = true;
